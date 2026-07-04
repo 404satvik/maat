@@ -1,0 +1,32 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Node / front-end
+app/node_modules/
+app/dist/
+
+# Data, models, indexes (large / generated)
+data/raw/
+models/
+index/
+
+# Keep tracked placeholders
+!data/raw/.gitkeep
+!models/.gitkeep
+!index/.gitkeep
+
+# Local tooling
+CLAUDE.md
+.claude/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Env
+.env
+.env.local

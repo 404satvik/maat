@@ -1,0 +1,476 @@
+{
+  "config": {
+    "random_seed": 42,
+    "n_splits": 5,
+    "n_variants": 3,
+    "vectorizer": "TfidfVectorizer(ngram_range=(1,2), min_df=2, sublinear_tf=True)",
+    "models": {
+      "majority": "DummyClassifier(strategy='most_frequent')",
+      "tfidf_logreg": "LogisticRegression(max_iter=2000)",
+      "tfidf_linearsvc": "LinearSVC(dual='auto')"
+    }
+  },
+  "cv": {
+    "majority": {
+      "n_splits": 5,
+      "macro_f1_mean": 0.098,
+      "macro_f1_std": 0.0025,
+      "other_recall_mean": 0.2,
+      "other_recall_std": 0.4,
+      "fold_macro_f1": [
+        0.1,
+        0.0949,
+        0.1,
+        0.1,
+        0.0949
+      ],
+      "fold_other_recall": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "tfidf_logreg": {
+      "n_splits": 5,
+      "macro_f1_mean": 0.8621,
+      "macro_f1_std": 0.033,
+      "other_recall_mean": 0.7237,
+      "other_recall_std": 0.0809,
+      "fold_macro_f1": [
+        0.8388,
+        0.8479,
+        0.8285,
+        0.9206,
+        0.8748
+      ],
+      "fold_other_recall": [
+        0.6875,
+        0.6,
+        0.8125,
+        0.8125,
+        0.7059
+      ]
+    },
+    "tfidf_linearsvc": {
+      "n_splits": 5,
+      "macro_f1_mean": 0.8576,
+      "macro_f1_std": 0.0337,
+      "other_recall_mean": 0.6862,
+      "other_recall_std": 0.0929,
+      "fold_macro_f1": [
+        0.8175,
+        0.8324,
+        0.8438,
+        0.9048,
+        0.8894
+      ],
+      "fold_other_recall": [
+        0.5625,
+        0.6,
+        0.75,
+        0.8125,
+        0.7059
+      ]
+    }
+  },
+  "fixed_split": {
+    "majority": {
+      "test": {
+        "accuracy": 0.25,
+        "macro_precision": 0.0625,
+        "macro_recall": 0.25,
+        "macro_f1": 0.1,
+        "other_recall": 0.0,
+        "per_class": {
+          "consumer": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 12
+          },
+          "cheque": {
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1": 0.4,
+            "support": 12
+          },
+          "tenancy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 12
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 12
+          }
+        },
+        "labels": [
+          "consumer",
+          "cheque",
+          "tenancy",
+          "other"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            12,
+            0,
+            0
+          ]
+        ]
+      },
+      "probe": {
+        "accuracy": 0.25,
+        "macro_precision": 0.0625,
+        "macro_recall": 0.25,
+        "macro_f1": 0.1,
+        "other_recall": 0.0,
+        "per_class": {
+          "consumer": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 12
+          },
+          "cheque": {
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1": 0.4,
+            "support": 12
+          },
+          "tenancy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 12
+          },
+          "other": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 12
+          }
+        },
+        "labels": [
+          "consumer",
+          "cheque",
+          "tenancy",
+          "other"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            12,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "tfidf_logreg": {
+      "test": {
+        "accuracy": 0.8125,
+        "macro_precision": 0.8229,
+        "macro_recall": 0.8125,
+        "macro_f1": 0.808,
+        "other_recall": 0.75,
+        "per_class": {
+          "consumer": {
+            "precision": 0.875,
+            "recall": 0.5833,
+            "f1": 0.7,
+            "support": 12
+          },
+          "cheque": {
+            "precision": 0.8571,
+            "recall": 1.0,
+            "f1": 0.9231,
+            "support": 12
+          },
+          "tenancy": {
+            "precision": 0.9167,
+            "recall": 0.9167,
+            "f1": 0.9167,
+            "support": 12
+          },
+          "other": {
+            "precision": 0.6429,
+            "recall": 0.75,
+            "f1": 0.6923,
+            "support": 12
+          }
+        },
+        "labels": [
+          "consumer",
+          "cheque",
+          "tenancy",
+          "other"
+        ],
+        "confusion_matrix": [
+          [
+            7,
+            1,
+            0,
+            4
+          ],
+          [
+            0,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            11,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            9
+          ]
+        ]
+      },
+      "probe": {
+        "accuracy": 0.8958,
+        "macro_precision": 0.9167,
+        "macro_recall": 0.8958,
+        "macro_f1": 0.898,
+        "other_recall": 1.0,
+        "per_class": {
+          "consumer": {
+            "precision": 1.0,
+            "recall": 0.8333,
+            "f1": 0.9091,
+            "support": 12
+          },
+          "cheque": {
+            "precision": 0.9167,
+            "recall": 0.9167,
+            "f1": 0.9167,
+            "support": 12
+          },
+          "tenancy": {
+            "precision": 1.0,
+            "recall": 0.8333,
+            "f1": 0.9091,
+            "support": 12
+          },
+          "other": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1": 0.8571,
+            "support": 12
+          }
+        },
+        "labels": [
+          "consumer",
+          "cheque",
+          "tenancy",
+          "other"
+        ],
+        "confusion_matrix": [
+          [
+            10,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            11,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            10,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            12
+          ]
+        ]
+      }
+    },
+    "tfidf_linearsvc": {
+      "test": {
+        "accuracy": 0.8333,
+        "macro_precision": 0.8389,
+        "macro_recall": 0.8333,
+        "macro_f1": 0.8294,
+        "other_recall": 0.75,
+        "per_class": {
+          "consumer": {
+            "precision": 0.8889,
+            "recall": 0.6667,
+            "f1": 0.7619,
+            "support": 12
+          },
+          "cheque": {
+            "precision": 0.8,
+            "recall": 1.0,
+            "f1": 0.8889,
+            "support": 12
+          },
+          "tenancy": {
+            "precision": 0.9167,
+            "recall": 0.9167,
+            "f1": 0.9167,
+            "support": 12
+          },
+          "other": {
+            "precision": 0.75,
+            "recall": 0.75,
+            "f1": 0.75,
+            "support": 12
+          }
+        },
+        "labels": [
+          "consumer",
+          "cheque",
+          "tenancy",
+          "other"
+        ],
+        "confusion_matrix": [
+          [
+            8,
+            2,
+            0,
+            2
+          ],
+          [
+            0,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            11,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            9
+          ]
+        ]
+      },
+      "probe": {
+        "accuracy": 0.9167,
+        "macro_precision": 0.9308,
+        "macro_recall": 0.9167,
+        "macro_f1": 0.9168,
+        "other_recall": 1.0,
+        "per_class": {
+          "consumer": {
+            "precision": 1.0,
+            "recall": 0.8333,
+            "f1": 0.9091,
+            "support": 12
+          },
+          "cheque": {
+            "precision": 0.9231,
+            "recall": 1.0,
+            "f1": 0.96,
+            "support": 12
+          },
+          "tenancy": {
+            "precision": 1.0,
+            "recall": 0.8333,
+            "f1": 0.9091,
+            "support": 12
+          },
+          "other": {
+            "precision": 0.8,
+            "recall": 1.0,
+            "f1": 0.8889,
+            "support": 12
+          }
+        },
+        "labels": [
+          "consumer",
+          "cheque",
+          "tenancy",
+          "other"
+        ],
+        "confusion_matrix": [
+          [
+            10,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            10,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            12
+          ]
+        ]
+      }
+    }
+  }
+}

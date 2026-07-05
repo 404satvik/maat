@@ -27,6 +27,7 @@ from src.intake.data import LABELS, load_seed
 SEED_DIR = Path("data/seed")
 PROCESSED_DIR = Path("data/processed")
 RESULTS_DIR = Path("results")
+MODELS_DIR = Path("models/intake-baselines")
 N_SPLITS = 5
 N_VARIANTS = 3
 
@@ -111,7 +112,15 @@ def main() -> None:
     }
 
     cv = {name: cross_validate_originals(originals, name, N_SPLITS, N_VARIANTS) for name in MODEL_NAMES}
-    fixed = {name: fixed_split_eval(train, eval_sets, name) for name in MODEL_NAMES}
+    fixed = {
+        name: fixed_split_eval(
+            train,
+            eval_sets,
+            name,
+            save_path=None if name == "majority" else MODELS_DIR / f"{name}.joblib",
+        )
+        for name in MODEL_NAMES
+    }
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     payload = {

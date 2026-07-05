@@ -9,6 +9,9 @@ test and probe sets.
 
 from __future__ import annotations
 
+from pathlib import Path
+
+import joblib
 import numpy as np
 import pandas as pd
 from sklearn.dummy import DummyClassifier
@@ -127,10 +130,18 @@ def fixed_split_eval(
     train: pd.DataFrame,
     eval_sets: dict[str, pd.DataFrame],
     model_name: str,
+    save_path: Path | None = None,
 ) -> dict[str, dict]:
-    """Train once on the pinned train split and evaluate on each eval set."""
+    """Train once on the pinned train split and evaluate on each eval set.
+
+    If save_path is given, the fitted pipeline is persisted there with
+    joblib so it can be loaded later for inference.
+    """
     model = build_model(model_name)
     model.fit(train["text"].tolist(), train["label"].tolist())
+    if save_path is not None:
+        save_path.parent.mkdir(parents=True, exist_ok=True)
+        joblib.dump(model, save_path)
     results: dict[str, dict] = {}
     for name, frame in eval_sets.items():
         pred = model.predict(frame["text"].tolist())

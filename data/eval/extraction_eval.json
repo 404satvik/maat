@@ -1,0 +1,294 @@
+{
+  "description": "Hand-annotated extraction eval set. Texts are referenced by id from data/seed/. Gold lists what a careful human would extract, including items known to be hard (Hindi relative dates, sub-1000 amounts, Hinglish role words), so metrics reflect real weaknesses. Parties gold covers counterparties and significant third parties only; complainant detection is trivial and unscored. Durations (for three months, 11 month agreement) are not dates and are excluded from gold.",
+  "anchor_date": "2026-07-07",
+  "items": [
+    {
+      "id": "chq-001",
+      "issue_type": "cheque",
+      "gold": {
+        "amounts": [120000],
+        "dates": [{"raw": "next week", "iso": "2026-07-14"}],
+        "parties": [{"word": "customer", "role": "other_side"}, {"word": "bank", "role": "third_party"}],
+        "places": [],
+        "events": ["gave me a cheque", "returned it", "promising to pay"]
+      }
+    },
+    {
+      "id": "chq-014",
+      "issue_type": "cheque",
+      "gold": {
+        "amounts": [30000],
+        "dates": [{"raw": "march", "iso": null}],
+        "parties": [{"word": "customer", "role": "other_side"}, {"word": "lawyer", "role": "third_party"}],
+        "places": [],
+        "events": ["bounced in march", "sent the demand notice", "sent a reply"]
+      }
+    },
+    {
+      "id": "chq-018",
+      "issue_type": "cheque",
+      "gold": {
+        "amounts": [220000],
+        "dates": [{"raw": "the 3rd of this month", "iso": "2026-07-03"}],
+        "parties": [{"word": "transporter", "role": "other_side"}],
+        "places": [],
+        "events": ["settled with a cheque", "it bounced", "memo is dated"]
+      }
+    },
+    {
+      "id": "chq-047",
+      "issue_type": "cheque",
+      "gold": {
+        "amounts": [66000],
+        "dates": [],
+        "parties": [{"word": "tenant", "role": "other_side"}],
+        "places": [],
+        "events": ["bounced"]
+      }
+    },
+    {
+      "id": "chq-064",
+      "issue_type": "cheque",
+      "gold": {
+        "amounts": [60000],
+        "dates": [],
+        "parties": [{"word": "neighbour", "role": "other_side"}],
+        "places": [],
+        "events": ["hand loan", "finally deposited"]
+      }
+    },
+    {
+      "id": "probe-chq-001",
+      "issue_type": "cheque",
+      "gold": {
+        "amounts": [480000],
+        "dates": [
+          {"raw": "feb", "iso": null},
+          {"raw": "june", "iso": null},
+          {"raw": "30 june", "iso": "2026-06-30"},
+          {"raw": "2 july", "iso": "2026-07-02"}
+        ],
+        "parties": [{"word": "contractor", "role": "other_side"}],
+        "places": [],
+        "events": ["supplied building material", "issued cheque", "returned on 2 july", "again bounce"]
+      }
+    },
+    {
+      "id": "probe-chq-004",
+      "issue_type": "cheque",
+      "gold": {
+        "amounts": [108000],
+        "dates": [],
+        "parties": [{"word": "employer", "role": "other_side"}, {"word": "company", "role": "other_side"}],
+        "places": [],
+        "events": ["settlement cheque", "cheque bounced", "stopped taking"]
+      }
+    },
+    {
+      "id": "con-002",
+      "issue_type": "consumer",
+      "gold": {
+        "amounts": [18000],
+        "dates": [],
+        "parties": [{"word": "seller", "role": "other_side"}],
+        "places": [],
+        "events": ["ordered a phone", "box arrived", "rejected my return"]
+      }
+    },
+    {
+      "id": "con-014",
+      "issue_type": "consumer",
+      "gold": {
+        "amounts": [4000000],
+        "dates": [{"raw": "2021", "iso": null}, {"raw": "2023", "iso": null}],
+        "parties": [{"word": "builder", "role": "other_side"}],
+        "places": ["Noida"],
+        "events": ["booked a flat", "promised possession"]
+      }
+    },
+    {
+      "id": "con-018",
+      "issue_type": "consumer",
+      "gold": {
+        "amounts": [80000],
+        "dates": [{"raw": "chaar mahine", "iso": "2026-03-07"}],
+        "parties": [{"word": "photographer", "role": "other_side"}],
+        "places": [],
+        "events": ["book kiya"]
+      }
+    },
+    {
+      "id": "con-030",
+      "issue_type": "consumer",
+      "gold": {
+        "amounts": [],
+        "dates": [],
+        "parties": [{"word": "company", "role": "other_side"}],
+        "places": ["Delhi", "Bangalore"],
+        "events": ["hired", "delivered our goods", "insurance claim"]
+      }
+    },
+    {
+      "id": "probe-con-001",
+      "issue_type": "consumer",
+      "gold": {
+        "amounts": [],
+        "dates": [
+          {"raw": "3rd april", "iso": "2026-04-03"},
+          {"raw": "8th", "iso": null},
+          {"raw": "next day", "iso": null},
+          {"raw": "since 3 weeks", "iso": "2026-06-16"}
+        ],
+        "parties": [{"word": "technician", "role": "third_party"}],
+        "places": [],
+        "events": ["ordered one", "installation done", "registered complaint", "to be replaced"]
+      }
+    },
+    {
+      "id": "probe-con-004",
+      "issue_type": "consumer",
+      "gold": {
+        "amounts": [24490],
+        "dates": [],
+        "parties": [{"word": "seller", "role": "other_side"}],
+        "places": [],
+        "events": ["booked a washing machine", "took the old machine", "cancelled by seller"]
+      }
+    },
+    {
+      "id": "ten-001",
+      "issue_type": "tenancy",
+      "gold": {
+        "amounts": [50000],
+        "dates": [{"raw": "two months ago", "iso": "2026-05-07"}],
+        "parties": [{"word": "landlord", "role": "other_side"}],
+        "places": [],
+        "events": ["vacated", "not returned my security deposit"]
+      }
+    },
+    {
+      "id": "ten-024",
+      "issue_type": "tenancy",
+      "gold": {
+        "amounts": [100000, 40000],
+        "dates": [],
+        "parties": [{"word": "landlord", "role": "other_side"}],
+        "places": [],
+        "events": ["took rs 1 lakh"]
+      }
+    },
+    {
+      "id": "ten-043",
+      "issue_type": "tenancy",
+      "gold": {
+        "amounts": [],
+        "dates": [],
+        "parties": [{"word": "malik", "role": "other_side"}],
+        "places": [],
+        "events": ["pani band"]
+      }
+    },
+    {
+      "id": "ten-055",
+      "issue_type": "tenancy",
+      "gold": {
+        "amounts": [],
+        "dates": [],
+        "parties": [{"word": "landlord", "role": "other_side"}],
+        "places": [],
+        "events": ["demands i vacate"]
+      }
+    },
+    {
+      "id": "probe-ten-001",
+      "issue_type": "tenancy",
+      "gold": {
+        "amounts": [60000],
+        "dates": [
+          {"raw": "31st march", "iso": "2026-03-31"},
+          {"raw": "last week", "iso": "2026-06-30"}
+        ],
+        "parties": [{"word": "owner", "role": "other_side"}],
+        "places": [],
+        "events": ["vacated my 2bhk", "did inspection", "stopped picking"]
+      }
+    },
+    {
+      "id": "probe-ten-010",
+      "issue_type": "tenancy",
+      "gold": {
+        "amounts": [20000, 800, 250, 600, 3000, 80000],
+        "dates": [],
+        "parties": [{"word": "owner", "role": "other_side"}],
+        "places": [],
+        "events": ["not returning deposit", "left same month"]
+      }
+    },
+    {
+      "id": "oth-001",
+      "issue_type": "other",
+      "gold": {
+        "amounts": [],
+        "dates": [{"raw": "next week", "iso": "2026-07-14"}],
+        "parties": [{"word": "employer", "role": "other_side"}],
+        "places": [],
+        "events": ["not paid salaries", "resigned"]
+      }
+    },
+    {
+      "id": "oth-007",
+      "issue_type": "other",
+      "gold": {
+        "amounts": [87000],
+        "dates": [],
+        "parties": [{"word": "bank", "role": "other_side"}],
+        "places": [],
+        "events": ["share an otp", "transferred out"]
+      }
+    },
+    {
+      "id": "oth-016",
+      "issue_type": "other",
+      "gold": {
+        "amounts": [140000],
+        "dates": [],
+        "parties": [{"word": "cyber", "role": "third_party"}],
+        "places": [],
+        "events": ["received a link", "disappeared", "took a complaint"]
+      }
+    },
+    {
+      "id": "oth-033",
+      "issue_type": "other",
+      "gold": {
+        "amounts": [],
+        "dates": [{"raw": "eight months ago", "iso": "2025-11-07"}],
+        "parties": [{"word": "corporation", "role": "other_side"}],
+        "places": [],
+        "events": ["demolished"]
+      }
+    },
+    {
+      "id": "probe-oth-010",
+      "issue_type": "other",
+      "gold": {
+        "amounts": [5000, 125000],
+        "dates": [{"raw": "this month", "iso": null}],
+        "parties": [{"word": "police", "role": "third_party"}],
+        "places": [],
+        "events": ["collected money", "vanished", "registering fir"]
+      }
+    },
+    {
+      "id": "probe-oth-012",
+      "issue_type": "other",
+      "gold": {
+        "amounts": [],
+        "dates": [],
+        "parties": [],
+        "places": [],
+        "events": ["accident"]
+      }
+    }
+  ]
+}

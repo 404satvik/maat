@@ -28,9 +28,26 @@ Planned coverage:
 | Name | Use |
 |---|---|
 | `law-ai/InLegalBERT` (HuggingFace) | Indian-legal BERT; intake classifier fine-tuning and case/statute embeddings |
-| `opennyai` | Indian-legal NER + rhetorical-role segmentation; fact/entity extraction and pulling the Facts section out of retrieved judgments |
+| `opennyai` | Indian-legal NER + rhetorical-role segmentation; see compatibility note below |
+| `spacy` + `en_core_web_sm` | General NER (DATE, GPE, ORG spans) supplementing the rule-based fact extractor |
 | `sentence-transformers` | Embedding pipeline for retrieval |
 | `faiss` / `chromadb` | Vector store over embedded cases and statutes |
+
+### OpenNyAI compatibility note
+
+The `opennyai` package does not install on Python 3.13 (it pins a spaCy
+3.2-era stack whose C extensions fail to build), and its published NER
+models (`opennyaiorg/en_legal_ner_sm` and `_trf` on HuggingFace) do not
+deserialize under modern spaCy either. Fact extraction from user
+complaints therefore uses spaCy `en_core_web_sm` plus a rule layer, which
+fits the register anyway: OpenNyAI's entity types (JUDGE, COURT,
+PETITIONER, STATUTE, and so on) target judgment prose, not complaints.
+
+Where OpenNyAI remains relevant is extracting facts from retrieved
+judgments in the retrieval phase, its native register. The option there
+is a separate Python 3.10 sidecar venv running OpenNyAI as an offline
+preprocessing step. That is a retrieval-phase decision, deferred until
+that phase begins.
 
 ## Redaction note
 

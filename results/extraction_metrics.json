@@ -1,0 +1,669 @@
+{
+  "anchor_date": "2026-07-07",
+  "n_items": 25,
+  "fields": {
+    "amounts": {
+      "tp": 22,
+      "fp": 0,
+      "fn": 3,
+      "precision": 1.0,
+      "recall": 0.88,
+      "f1": 0.936
+    },
+    "dates": {
+      "tp": 14,
+      "fp": 0,
+      "fn": 6,
+      "precision": 1.0,
+      "recall": 0.7,
+      "f1": 0.824
+    },
+    "parties": {
+      "tp": 15,
+      "fp": 13,
+      "fn": 12,
+      "precision": 0.536,
+      "recall": 0.556,
+      "f1": 0.545
+    },
+    "places": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "party_role_accuracy": 0.933,
+  "timeline_event_recall": 0.825,
+  "timeline_events_covered": 47,
+  "timeline_events_total": 57,
+  "per_item": [
+    {
+      "id": "chq-001",
+      "amounts": [
+        1,
+        0,
+        0
+      ],
+      "dates": [
+        1,
+        0,
+        0
+      ],
+      "parties": [
+        2,
+        1,
+        0
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 3,
+      "events_total": 3
+    },
+    {
+      "id": "chq-014",
+      "amounts": [
+        1,
+        0,
+        0
+      ],
+      "dates": [
+        1,
+        0,
+        0
+      ],
+      "parties": [
+        1,
+        0,
+        1
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 3,
+      "events_total": 3
+    },
+    {
+      "id": "chq-018",
+      "amounts": [
+        1,
+        0,
+        0
+      ],
+      "dates": [
+        1,
+        0,
+        0
+      ],
+      "parties": [
+        1,
+        0,
+        0
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 3,
+      "events_total": 3
+    },
+    {
+      "id": "chq-047",
+      "amounts": [
+        1,
+        0,
+        0
+      ],
+      "dates": [
+        0,
+        0,
+        0
+      ],
+      "parties": [
+        0,
+        1,
+        1
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 1,
+      "events_total": 1
+    },
+    {
+      "id": "chq-064",
+      "amounts": [
+        1,
+        0,
+        0
+      ],
+      "dates": [
+        0,
+        0,
+        0
+      ],
+      "parties": [
+        1,
+        0,
+        0
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 2,
+      "events_total": 2
+    },
+    {
+      "id": "probe-chq-001",
+      "amounts": [
+        1,
+        0,
+        0
+      ],
+      "dates": [
+        4,
+        0,
+        0
+      ],
+      "parties": [
+        1,
+        0,
+        0
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 3,
+      "events_total": 4
+    },
+    {
+      "id": "probe-chq-004",
+      "amounts": [
+        1,
+        0,
+        0
+      ],
+      "dates": [
+        0,
+        0,
+        0
+      ],
+      "parties": [
+        2,
+        0,
+        0
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 3,
+      "events_total": 3
+    },
+    {
+      "id": "con-002",
+      "amounts": [
+        1,
+        0,
+        0
+      ],
+      "dates": [
+        0,
+        0,
+        0
+      ],
+      "parties": [
+        1,
+        0,
+        0
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 3,
+      "events_total": 3
+    },
+    {
+      "id": "con-014",
+      "amounts": [
+        1,
+        0,
+        0
+      ],
+      "dates": [
+        0,
+        0,
+        2
+      ],
+      "parties": [
+        1,
+        0,
+        0
+      ],
+      "places": [
+        1,
+        0,
+        0
+      ],
+      "events_covered": 2,
+      "events_total": 2
+    },
+    {
+      "id": "con-018",
+      "amounts": [
+        1,
+        0,
+        0
+      ],
+      "dates": [
+        0,
+        0,
+        1
+      ],
+      "parties": [
+        0,
+        1,
+        1
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 0,
+      "events_total": 1
+    },
+    {
+      "id": "con-030",
+      "amounts": [
+        0,
+        0,
+        0
+      ],
+      "dates": [
+        0,
+        0,
+        0
+      ],
+      "parties": [
+        0,
+        1,
+        1
+      ],
+      "places": [
+        2,
+        0,
+        0
+      ],
+      "events_covered": 3,
+      "events_total": 3
+    },
+    {
+      "id": "probe-con-001",
+      "amounts": [
+        0,
+        0,
+        0
+      ],
+      "dates": [
+        2,
+        0,
+        2
+      ],
+      "parties": [
+        0,
+        0,
+        1
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 2,
+      "events_total": 4
+    },
+    {
+      "id": "probe-con-004",
+      "amounts": [
+        1,
+        0,
+        0
+      ],
+      "dates": [
+        0,
+        0,
+        0
+      ],
+      "parties": [
+        0,
+        0,
+        1
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 3,
+      "events_total": 3
+    },
+    {
+      "id": "ten-001",
+      "amounts": [
+        1,
+        0,
+        0
+      ],
+      "dates": [
+        1,
+        0,
+        0
+      ],
+      "parties": [
+        1,
+        0,
+        0
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 2,
+      "events_total": 2
+    },
+    {
+      "id": "ten-024",
+      "amounts": [
+        2,
+        0,
+        0
+      ],
+      "dates": [
+        0,
+        0,
+        0
+      ],
+      "parties": [
+        1,
+        0,
+        0
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 1,
+      "events_total": 1
+    },
+    {
+      "id": "ten-043",
+      "amounts": [
+        0,
+        0,
+        0
+      ],
+      "dates": [
+        0,
+        0,
+        0
+      ],
+      "parties": [
+        0,
+        3,
+        1
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 0,
+      "events_total": 1
+    },
+    {
+      "id": "ten-055",
+      "amounts": [
+        0,
+        0,
+        0
+      ],
+      "dates": [
+        0,
+        0,
+        0
+      ],
+      "parties": [
+        1,
+        0,
+        0
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 1,
+      "events_total": 1
+    },
+    {
+      "id": "probe-ten-001",
+      "amounts": [
+        1,
+        0,
+        0
+      ],
+      "dates": [
+        2,
+        0,
+        0
+      ],
+      "parties": [
+        0,
+        0,
+        1
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 3,
+      "events_total": 3
+    },
+    {
+      "id": "probe-ten-010",
+      "amounts": [
+        3,
+        0,
+        3
+      ],
+      "dates": [
+        0,
+        0,
+        0
+      ],
+      "parties": [
+        0,
+        0,
+        1
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 2,
+      "events_total": 2
+    },
+    {
+      "id": "oth-001",
+      "amounts": [
+        0,
+        0,
+        0
+      ],
+      "dates": [
+        1,
+        0,
+        0
+      ],
+      "parties": [
+        1,
+        0,
+        0
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 1,
+      "events_total": 2
+    },
+    {
+      "id": "oth-007",
+      "amounts": [
+        1,
+        0,
+        0
+      ],
+      "dates": [
+        0,
+        0,
+        0
+      ],
+      "parties": [
+        1,
+        0,
+        0
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 1,
+      "events_total": 2
+    },
+    {
+      "id": "oth-016",
+      "amounts": [
+        1,
+        0,
+        0
+      ],
+      "dates": [
+        0,
+        0,
+        0
+      ],
+      "parties": [
+        0,
+        0,
+        1
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 2,
+      "events_total": 3
+    },
+    {
+      "id": "oth-033",
+      "amounts": [
+        0,
+        0,
+        0
+      ],
+      "dates": [
+        1,
+        0,
+        0
+      ],
+      "parties": [
+        0,
+        0,
+        1
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 0,
+      "events_total": 1
+    },
+    {
+      "id": "probe-oth-010",
+      "amounts": [
+        2,
+        0,
+        0
+      ],
+      "dates": [
+        0,
+        0,
+        1
+      ],
+      "parties": [
+        0,
+        0,
+        1
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 3,
+      "events_total": 3
+    },
+    {
+      "id": "probe-oth-012",
+      "amounts": [
+        0,
+        0,
+        0
+      ],
+      "dates": [
+        0,
+        0,
+        0
+      ],
+      "parties": [
+        0,
+        6,
+        0
+      ],
+      "places": [
+        0,
+        0,
+        0
+      ],
+      "events_covered": 0,
+      "events_total": 1
+    }
+  ]
+}

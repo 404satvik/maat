@@ -35,5 +35,17 @@ app/        web UI (React + Vite + Tailwind)
 docs/       notes on data sources
 ```
 
+## Findings
+
+On an 18-query retrieval eval, general-purpose MiniLM beat the Indian-legal
+InLegalBERT on the primary config: hit@5 of 1.000 against 0.833 and hit@10
+of 1.000 against 0.944, with precision pointing the same way (P@5 0.600
+against 0.400) as directional support. The takeaway is that contrastive
+training matters more than domain vocabulary for similarity retrieval.
+InLegalBERT was in the experiment precisely as the comparison baseline, so
+it earned its keep by losing cleanly. These numbers come from a small
+keyword-predicate proxy eval, not human adjudication, so treat them as
+directional rather than settled.
+
 Still early: the repo is scaffolding only at this point, no models or data
 yet.

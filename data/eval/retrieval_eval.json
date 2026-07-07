@@ -1,0 +1,24 @@
+{
+  "description": "Retrieval eval queries. Each query is a seed/probe complaint with a sub-topic relevance predicate (regex over judgment text). The predicate is a keyword proxy for relevance, not human adjudication of the judgments; precision/recall under it are directional. hit@k means at least one predicate-relevant document in the top k.",
+  "anchor_date": "2026-07-07",
+  "queries": [
+    {"id": "chq-001", "issue_type": "cheque", "subtopic": "insufficient funds", "relevance_regex": "insufficient(?:ly)? fund|funds insufficient|insufficiency of funds"},
+    {"id": "chq-016", "issue_type": "cheque", "subtopic": "stop payment", "relevance_regex": "stop payment|payment (?:was |has been )?stopped|countermand"},
+    {"id": "chq-003", "issue_type": "cheque", "subtopic": "signature mismatch", "relevance_regex": "signature.{0,40}(?:differ|mismatch|not match|does not tally|incomplete)"},
+    {"id": "chq-064", "issue_type": "cheque", "subtopic": "account closed", "relevance_regex": "account (?:was |had been |stood |already )?closed"},
+    {"id": "chq-077", "issue_type": "cheque", "subtopic": "notice and limitation", "relevance_regex": "notice.{0,80}(?:fifteen|15|thirty|30) days|within (?:fifteen|15|thirty|30) days.{0,80}notice"},
+    {"id": "probe-chq-010", "issue_type": "cheque", "subtopic": "security cheque defence", "relevance_regex": "security.{0,60}cheque|cheque.{0,60}(?:as|by way of) security|blank cheque"},
+    {"id": "con-031", "issue_type": "consumer", "subtopic": "insurance claim rejection", "relevance_regex": "insur(?:ance|er)|policy.{0,40}(?:repudiat|reject)"},
+    {"id": "probe-con-007", "issue_type": "consumer", "subtopic": "insurance repudiation", "relevance_regex": "repudiat|insur(?:ance|er)"},
+    {"id": "con-014", "issue_type": "consumer", "subtopic": "builder possession delay", "relevance_regex": "builder|possession.{0,60}(?:flat|apartment)|allottee|developer"},
+    {"id": "con-019", "issue_type": "consumer", "subtopic": "airline service", "relevance_regex": "airline|air carriage|flight|passenger"},
+    {"id": "con-022", "issue_type": "consumer", "subtopic": "medical negligence", "relevance_regex": "medical negligence|hospital.{0,60}negligen|doctor.{0,60}negligen|surgery"},
+    {"id": "con-001", "issue_type": "consumer", "subtopic": "defective goods", "relevance_regex": "defect(?:ive)?.{0,60}(?:goods|product|vehicle|machine)|manufacturing defect"},
+    {"id": "ten-005", "issue_type": "tenancy", "subtopic": "bona fide requirement eviction", "relevance_regex": "bona ?fide.{0,60}(?:requirement|need|necessity)|personal (?:necessity|requirement)"},
+    {"id": "ten-001", "issue_type": "tenancy", "subtopic": "security deposit", "relevance_regex": "security deposit|refund.{0,60}deposit|deposit.{0,60}refund"},
+    {"id": "ten-031", "issue_type": "tenancy", "subtopic": "rent arrears default", "relevance_regex": "arrears of rent|default.{0,40}(?:payment of )?rent|non-?payment of rent"},
+    {"id": "ten-032", "issue_type": "tenancy", "subtopic": "subletting", "relevance_regex": "sub-?let|sub-?tenant|subtenancy"},
+    {"id": "ten-002", "issue_type": "tenancy", "subtopic": "rent increase standard rent", "relevance_regex": "standard rent|fair rent|enhancement of rent|increase.{0,30}rent"},
+    {"id": "ten-060", "issue_type": "tenancy", "subtopic": "commercial premises eviction", "relevance_regex": "(?:shop|commercial|non-?residential).{0,80}(?:eviction|ejectment|premises)|premises.{0,60}(?:shop|business)"}
+  ]
+}

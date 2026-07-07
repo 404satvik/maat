@@ -1,0 +1,959 @@
+{
+  "corpus": {
+    "corpus": "L-NLProc/PredEx (official)",
+    "n_docs": 2170,
+    "n_chunks": 68415,
+    "per_area": {
+      "tenancy": 1661,
+      "consumer": 301,
+      "cheque": 208
+    },
+    "coverage_note": "Supreme Court appellate judgments only; consumer-forum and rent-court level outcomes are not in this corpus"
+  },
+  "relevance_note": "Retrieval eval queries. Each query is a seed/probe complaint with a sub-topic relevance predicate (regex over judgment text). The predicate is a keyword proxy for relevance, not human adjudication of the judgments; precision/recall under it are directional. hit@k means at least one predicate-relevant document in the top k.",
+  "configs": [
+    {
+      "embedder": "minilm",
+      "query_mode": "facts",
+      "chunks": "full",
+      "n_queries": 18,
+      "p_at_5": 0.567,
+      "hit_at_5": 0.889,
+      "p_at_10": 0.533,
+      "hit_at_10": 1.0
+    },
+    {
+      "embedder": "minilm",
+      "query_mode": "raw",
+      "chunks": "full",
+      "n_queries": 18,
+      "p_at_5": 0.567,
+      "hit_at_5": 0.833,
+      "p_at_10": 0.533,
+      "hit_at_10": 1.0
+    },
+    {
+      "embedder": "inlegalbert",
+      "query_mode": "facts",
+      "chunks": "full",
+      "n_queries": 18,
+      "p_at_5": 0.433,
+      "hit_at_5": 0.833,
+      "p_at_10": 0.406,
+      "hit_at_10": 0.944
+    },
+    {
+      "embedder": "inlegalbert",
+      "query_mode": "raw",
+      "chunks": "full",
+      "n_queries": 18,
+      "p_at_5": 0.433,
+      "hit_at_5": 0.833,
+      "p_at_10": 0.35,
+      "hit_at_10": 0.889
+    },
+    {
+      "embedder": "minilm",
+      "query_mode": "facts",
+      "chunks": "first10",
+      "n_queries": 18,
+      "p_at_5": 0.511,
+      "hit_at_5": 0.889,
+      "p_at_10": 0.494,
+      "hit_at_10": 1.0
+    },
+    {
+      "embedder": "minilm",
+      "query_mode": "raw",
+      "chunks": "first10",
+      "n_queries": 18,
+      "p_at_5": 0.544,
+      "hit_at_5": 0.889,
+      "p_at_10": 0.533,
+      "hit_at_10": 0.944
+    }
+  ],
+  "per_query": {
+    "minilm/facts/full": [
+      {
+        "id": "chq-001",
+        "subtopic": "insufficient funds",
+        "p_at_5": 0.6,
+        "hit_at_5": 1,
+        "p_at_10": 0.5,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-016",
+        "subtopic": "stop payment",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 0.8,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-003",
+        "subtopic": "signature mismatch",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-064",
+        "subtopic": "account closed",
+        "p_at_5": 0.6,
+        "hit_at_5": 1,
+        "p_at_10": 0.3,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-077",
+        "subtopic": "notice and limitation",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.4,
+        "hit_at_10": 1
+      },
+      {
+        "id": "probe-chq-010",
+        "subtopic": "security cheque defence",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-031",
+        "subtopic": "insurance claim rejection",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 0.8,
+        "hit_at_10": 1
+      },
+      {
+        "id": "probe-con-007",
+        "subtopic": "insurance repudiation",
+        "p_at_5": 0.6,
+        "hit_at_5": 1,
+        "p_at_10": 0.8,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-014",
+        "subtopic": "builder possession delay",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 1.0,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-019",
+        "subtopic": "airline service",
+        "p_at_5": 0.4,
+        "hit_at_5": 1,
+        "p_at_10": 0.4,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-022",
+        "subtopic": "medical negligence",
+        "p_at_5": 0.8,
+        "hit_at_5": 1,
+        "p_at_10": 0.8,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-001",
+        "subtopic": "defective goods",
+        "p_at_5": 0.4,
+        "hit_at_5": 1,
+        "p_at_10": 0.5,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-005",
+        "subtopic": "bona fide requirement eviction",
+        "p_at_5": 0.4,
+        "hit_at_5": 1,
+        "p_at_10": 0.3,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-001",
+        "subtopic": "security deposit",
+        "p_at_5": 0.0,
+        "hit_at_5": 0,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-031",
+        "subtopic": "rent arrears default",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 1.0,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-032",
+        "subtopic": "subletting",
+        "p_at_5": 0.8,
+        "hit_at_5": 1,
+        "p_at_10": 0.7,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-002",
+        "subtopic": "rent increase standard rent",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 0.9,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-060",
+        "subtopic": "commercial premises eviction",
+        "p_at_5": 0.0,
+        "hit_at_5": 0,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      }
+    ],
+    "minilm/raw/full": [
+      {
+        "id": "chq-001",
+        "subtopic": "insufficient funds",
+        "p_at_5": 0.6,
+        "hit_at_5": 1,
+        "p_at_10": 0.5,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-016",
+        "subtopic": "stop payment",
+        "p_at_5": 0.4,
+        "hit_at_5": 1,
+        "p_at_10": 0.2,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-003",
+        "subtopic": "signature mismatch",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-064",
+        "subtopic": "account closed",
+        "p_at_5": 0.0,
+        "hit_at_5": 0,
+        "p_at_10": 0.2,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-077",
+        "subtopic": "notice and limitation",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 1.0,
+        "hit_at_10": 1
+      },
+      {
+        "id": "probe-chq-010",
+        "subtopic": "security cheque defence",
+        "p_at_5": 0.4,
+        "hit_at_5": 1,
+        "p_at_10": 0.5,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-031",
+        "subtopic": "insurance claim rejection",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 1.0,
+        "hit_at_10": 1
+      },
+      {
+        "id": "probe-con-007",
+        "subtopic": "insurance repudiation",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 0.9,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-014",
+        "subtopic": "builder possession delay",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 1.0,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-019",
+        "subtopic": "airline service",
+        "p_at_5": 0.8,
+        "hit_at_5": 1,
+        "p_at_10": 0.6,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-022",
+        "subtopic": "medical negligence",
+        "p_at_5": 0.8,
+        "hit_at_5": 1,
+        "p_at_10": 0.8,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-001",
+        "subtopic": "defective goods",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.2,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-005",
+        "subtopic": "bona fide requirement eviction",
+        "p_at_5": 0.0,
+        "hit_at_5": 0,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-001",
+        "subtopic": "security deposit",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-031",
+        "subtopic": "rent arrears default",
+        "p_at_5": 0.6,
+        "hit_at_5": 1,
+        "p_at_10": 0.4,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-032",
+        "subtopic": "subletting",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 1.0,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-002",
+        "subtopic": "rent increase standard rent",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 0.9,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-060",
+        "subtopic": "commercial premises eviction",
+        "p_at_5": 0.0,
+        "hit_at_5": 0,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      }
+    ],
+    "inlegalbert/facts/full": [
+      {
+        "id": "chq-001",
+        "subtopic": "insufficient funds",
+        "p_at_5": 0.6,
+        "hit_at_5": 1,
+        "p_at_10": 0.5,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-016",
+        "subtopic": "stop payment",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.3,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-003",
+        "subtopic": "signature mismatch",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-064",
+        "subtopic": "account closed",
+        "p_at_5": 0.0,
+        "hit_at_5": 0,
+        "p_at_10": 0.0,
+        "hit_at_10": 0
+      },
+      {
+        "id": "chq-077",
+        "subtopic": "notice and limitation",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.5,
+        "hit_at_10": 1
+      },
+      {
+        "id": "probe-chq-010",
+        "subtopic": "security cheque defence",
+        "p_at_5": 0.4,
+        "hit_at_5": 1,
+        "p_at_10": 0.4,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-031",
+        "subtopic": "insurance claim rejection",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 0.8,
+        "hit_at_10": 1
+      },
+      {
+        "id": "probe-con-007",
+        "subtopic": "insurance repudiation",
+        "p_at_5": 0.4,
+        "hit_at_5": 1,
+        "p_at_10": 0.5,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-014",
+        "subtopic": "builder possession delay",
+        "p_at_5": 0.8,
+        "hit_at_5": 1,
+        "p_at_10": 0.6,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-019",
+        "subtopic": "airline service",
+        "p_at_5": 0.4,
+        "hit_at_5": 1,
+        "p_at_10": 0.3,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-022",
+        "subtopic": "medical negligence",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 1.0,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-001",
+        "subtopic": "defective goods",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.3,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-005",
+        "subtopic": "bona fide requirement eviction",
+        "p_at_5": 0.4,
+        "hit_at_5": 1,
+        "p_at_10": 0.2,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-001",
+        "subtopic": "security deposit",
+        "p_at_5": 0.0,
+        "hit_at_5": 0,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-031",
+        "subtopic": "rent arrears default",
+        "p_at_5": 0.6,
+        "hit_at_5": 1,
+        "p_at_10": 0.5,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-032",
+        "subtopic": "subletting",
+        "p_at_5": 0.6,
+        "hit_at_5": 1,
+        "p_at_10": 0.5,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-002",
+        "subtopic": "rent increase standard rent",
+        "p_at_5": 0.8,
+        "hit_at_5": 1,
+        "p_at_10": 0.6,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-060",
+        "subtopic": "commercial premises eviction",
+        "p_at_5": 0.0,
+        "hit_at_5": 0,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      }
+    ],
+    "inlegalbert/raw/full": [
+      {
+        "id": "chq-001",
+        "subtopic": "insufficient funds",
+        "p_at_5": 0.4,
+        "hit_at_5": 1,
+        "p_at_10": 0.2,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-016",
+        "subtopic": "stop payment",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.2,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-003",
+        "subtopic": "signature mismatch",
+        "p_at_5": 0.0,
+        "hit_at_5": 0,
+        "p_at_10": 0.0,
+        "hit_at_10": 0
+      },
+      {
+        "id": "chq-064",
+        "subtopic": "account closed",
+        "p_at_5": 0.0,
+        "hit_at_5": 0,
+        "p_at_10": 0.0,
+        "hit_at_10": 0
+      },
+      {
+        "id": "chq-077",
+        "subtopic": "notice and limitation",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.2,
+        "hit_at_10": 1
+      },
+      {
+        "id": "probe-chq-010",
+        "subtopic": "security cheque defence",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.2,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-031",
+        "subtopic": "insurance claim rejection",
+        "p_at_5": 0.8,
+        "hit_at_5": 1,
+        "p_at_10": 0.8,
+        "hit_at_10": 1
+      },
+      {
+        "id": "probe-con-007",
+        "subtopic": "insurance repudiation",
+        "p_at_5": 0.6,
+        "hit_at_5": 1,
+        "p_at_10": 0.6,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-014",
+        "subtopic": "builder possession delay",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 0.8,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-019",
+        "subtopic": "airline service",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 0.5,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-022",
+        "subtopic": "medical negligence",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 0.9,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-001",
+        "subtopic": "defective goods",
+        "p_at_5": 0.4,
+        "hit_at_5": 1,
+        "p_at_10": 0.2,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-005",
+        "subtopic": "bona fide requirement eviction",
+        "p_at_5": 0.0,
+        "hit_at_5": 0,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-001",
+        "subtopic": "security deposit",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-031",
+        "subtopic": "rent arrears default",
+        "p_at_5": 0.6,
+        "hit_at_5": 1,
+        "p_at_10": 0.4,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-032",
+        "subtopic": "subletting",
+        "p_at_5": 0.4,
+        "hit_at_5": 1,
+        "p_at_10": 0.3,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-002",
+        "subtopic": "rent increase standard rent",
+        "p_at_5": 0.6,
+        "hit_at_5": 1,
+        "p_at_10": 0.5,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-060",
+        "subtopic": "commercial premises eviction",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.3,
+        "hit_at_10": 1
+      }
+    ],
+    "minilm/facts/first10": [
+      {
+        "id": "chq-001",
+        "subtopic": "insufficient funds",
+        "p_at_5": 0.4,
+        "hit_at_5": 1,
+        "p_at_10": 0.3,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-016",
+        "subtopic": "stop payment",
+        "p_at_5": 0.6,
+        "hit_at_5": 1,
+        "p_at_10": 0.5,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-003",
+        "subtopic": "signature mismatch",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-064",
+        "subtopic": "account closed",
+        "p_at_5": 0.6,
+        "hit_at_5": 1,
+        "p_at_10": 0.3,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-077",
+        "subtopic": "notice and limitation",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.4,
+        "hit_at_10": 1
+      },
+      {
+        "id": "probe-chq-010",
+        "subtopic": "security cheque defence",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.3,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-031",
+        "subtopic": "insurance claim rejection",
+        "p_at_5": 0.8,
+        "hit_at_5": 1,
+        "p_at_10": 0.9,
+        "hit_at_10": 1
+      },
+      {
+        "id": "probe-con-007",
+        "subtopic": "insurance repudiation",
+        "p_at_5": 0.6,
+        "hit_at_5": 1,
+        "p_at_10": 0.8,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-014",
+        "subtopic": "builder possession delay",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 0.9,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-019",
+        "subtopic": "airline service",
+        "p_at_5": 0.4,
+        "hit_at_5": 1,
+        "p_at_10": 0.5,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-022",
+        "subtopic": "medical negligence",
+        "p_at_5": 0.8,
+        "hit_at_5": 1,
+        "p_at_10": 0.7,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-001",
+        "subtopic": "defective goods",
+        "p_at_5": 0.4,
+        "hit_at_5": 1,
+        "p_at_10": 0.3,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-005",
+        "subtopic": "bona fide requirement eviction",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-001",
+        "subtopic": "security deposit",
+        "p_at_5": 0.0,
+        "hit_at_5": 0,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-031",
+        "subtopic": "rent arrears default",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 0.9,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-032",
+        "subtopic": "subletting",
+        "p_at_5": 0.8,
+        "hit_at_5": 1,
+        "p_at_10": 0.8,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-002",
+        "subtopic": "rent increase standard rent",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 0.9,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-060",
+        "subtopic": "commercial premises eviction",
+        "p_at_5": 0.0,
+        "hit_at_5": 0,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      }
+    ],
+    "minilm/raw/first10": [
+      {
+        "id": "chq-001",
+        "subtopic": "insufficient funds",
+        "p_at_5": 0.6,
+        "hit_at_5": 1,
+        "p_at_10": 0.6,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-016",
+        "subtopic": "stop payment",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.2,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-003",
+        "subtopic": "signature mismatch",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-064",
+        "subtopic": "account closed",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.2,
+        "hit_at_10": 1
+      },
+      {
+        "id": "chq-077",
+        "subtopic": "notice and limitation",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 1.0,
+        "hit_at_10": 1
+      },
+      {
+        "id": "probe-chq-010",
+        "subtopic": "security cheque defence",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.5,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-031",
+        "subtopic": "insurance claim rejection",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 1.0,
+        "hit_at_10": 1
+      },
+      {
+        "id": "probe-con-007",
+        "subtopic": "insurance repudiation",
+        "p_at_5": 0.8,
+        "hit_at_5": 1,
+        "p_at_10": 0.8,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-014",
+        "subtopic": "builder possession delay",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 1.0,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-019",
+        "subtopic": "airline service",
+        "p_at_5": 0.8,
+        "hit_at_5": 1,
+        "p_at_10": 0.6,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-022",
+        "subtopic": "medical negligence",
+        "p_at_5": 0.8,
+        "hit_at_5": 1,
+        "p_at_10": 0.7,
+        "hit_at_10": 1
+      },
+      {
+        "id": "con-001",
+        "subtopic": "defective goods",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.2,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-005",
+        "subtopic": "bona fide requirement eviction",
+        "p_at_5": 0.0,
+        "hit_at_5": 0,
+        "p_at_10": 0.2,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-001",
+        "subtopic": "security deposit",
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.1,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-031",
+        "subtopic": "rent arrears default",
+        "p_at_5": 0.6,
+        "hit_at_5": 1,
+        "p_at_10": 0.6,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-032",
+        "subtopic": "subletting",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 1.0,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-002",
+        "subtopic": "rent increase standard rent",
+        "p_at_5": 1.0,
+        "hit_at_5": 1,
+        "p_at_10": 0.8,
+        "hit_at_10": 1
+      },
+      {
+        "id": "ten-060",
+        "subtopic": "commercial premises eviction",
+        "p_at_5": 0.0,
+        "hit_at_5": 0,
+        "p_at_10": 0.0,
+        "hit_at_10": 0
+      }
+    ]
+  },
+  "grounding_check": {
+    "results_checked": 1080,
+    "violations": [],
+    "clean": true
+  }
+}

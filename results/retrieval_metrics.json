@@ -17,9 +17,9 @@
       "query_mode": "facts",
       "chunks": "full",
       "n_queries": 18,
-      "p_at_5": 0.567,
-      "hit_at_5": 0.889,
-      "p_at_10": 0.533,
+      "p_at_5": 0.6,
+      "hit_at_5": 1.0,
+      "p_at_10": 0.583,
       "hit_at_10": 1.0
     },
     {
@@ -37,10 +37,10 @@
       "query_mode": "facts",
       "chunks": "full",
       "n_queries": 18,
-      "p_at_5": 0.433,
+      "p_at_5": 0.4,
       "hit_at_5": 0.833,
-      "p_at_10": 0.406,
-      "hit_at_10": 0.944
+      "p_at_10": 0.4,
+      "hit_at_10": 0.889
     },
     {
       "embedder": "inlegalbert",
@@ -57,9 +57,9 @@
       "query_mode": "facts",
       "chunks": "first10",
       "n_queries": 18,
-      "p_at_5": 0.511,
-      "hit_at_5": 0.889,
-      "p_at_10": 0.494,
+      "p_at_5": 0.589,
+      "hit_at_5": 1.0,
+      "p_at_10": 0.533,
       "hit_at_10": 1.0
     },
     {
@@ -80,15 +80,15 @@
         "subtopic": "insufficient funds",
         "p_at_5": 0.6,
         "hit_at_5": 1,
-        "p_at_10": 0.5,
+        "p_at_10": 0.6,
         "hit_at_10": 1
       },
       {
         "id": "chq-016",
         "subtopic": "stop payment",
-        "p_at_5": 1.0,
+        "p_at_5": 0.6,
         "hit_at_5": 1,
-        "p_at_10": 0.8,
+        "p_at_10": 0.5,
         "hit_at_10": 1
       },
       {
@@ -102,17 +102,17 @@
       {
         "id": "chq-064",
         "subtopic": "account closed",
-        "p_at_5": 0.6,
+        "p_at_5": 0.2,
         "hit_at_5": 1,
-        "p_at_10": 0.3,
+        "p_at_10": 0.2,
         "hit_at_10": 1
       },
       {
         "id": "chq-077",
         "subtopic": "notice and limitation",
-        "p_at_5": 0.2,
+        "p_at_5": 1.0,
         "hit_at_5": 1,
-        "p_at_10": 0.4,
+        "p_at_10": 1.0,
         "hit_at_10": 1
       },
       {
@@ -128,13 +128,13 @@
         "subtopic": "insurance claim rejection",
         "p_at_5": 1.0,
         "hit_at_5": 1,
-        "p_at_10": 0.8,
+        "p_at_10": 1.0,
         "hit_at_10": 1
       },
       {
         "id": "probe-con-007",
         "subtopic": "insurance repudiation",
-        "p_at_5": 0.6,
+        "p_at_5": 0.8,
         "hit_at_5": 1,
         "p_at_10": 0.8,
         "hit_at_10": 1
@@ -150,25 +150,25 @@
       {
         "id": "con-019",
         "subtopic": "airline service",
-        "p_at_5": 0.4,
+        "p_at_5": 0.6,
         "hit_at_5": 1,
-        "p_at_10": 0.4,
+        "p_at_10": 0.5,
         "hit_at_10": 1
       },
       {
         "id": "con-022",
         "subtopic": "medical negligence",
-        "p_at_5": 0.8,
+        "p_at_5": 1.0,
         "hit_at_5": 1,
-        "p_at_10": 0.8,
+        "p_at_10": 1.0,
         "hit_at_10": 1
       },
       {
         "id": "con-001",
         "subtopic": "defective goods",
-        "p_at_5": 0.4,
+        "p_at_5": 0.2,
         "hit_at_5": 1,
-        "p_at_10": 0.5,
+        "p_at_10": 0.3,
         "hit_at_10": 1
       },
       {
@@ -182,17 +182,17 @@
       {
         "id": "ten-001",
         "subtopic": "security deposit",
-        "p_at_5": 0.0,
-        "hit_at_5": 0,
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
         "p_at_10": 0.1,
         "hit_at_10": 1
       },
       {
         "id": "ten-031",
         "subtopic": "rent arrears default",
-        "p_at_5": 1.0,
+        "p_at_5": 0.6,
         "hit_at_5": 1,
-        "p_at_10": 1.0,
+        "p_at_10": 0.7,
         "hit_at_10": 1
       },
       {
@@ -200,7 +200,7 @@
         "subtopic": "subletting",
         "p_at_5": 0.8,
         "hit_at_5": 1,
-        "p_at_10": 0.7,
+        "p_at_10": 0.8,
         "hit_at_10": 1
       },
       {
@@ -208,15 +208,15 @@
         "subtopic": "rent increase standard rent",
         "p_at_5": 1.0,
         "hit_at_5": 1,
-        "p_at_10": 0.9,
+        "p_at_10": 1.0,
         "hit_at_10": 1
       },
       {
         "id": "ten-060",
         "subtopic": "commercial premises eviction",
-        "p_at_5": 0.0,
-        "hit_at_5": 0,
-        "p_at_10": 0.1,
+        "p_at_5": 0.4,
+        "hit_at_5": 1,
+        "p_at_10": 0.5,
         "hit_at_10": 1
       }
     ],
@@ -370,9 +370,9 @@
       {
         "id": "chq-001",
         "subtopic": "insufficient funds",
-        "p_at_5": 0.6,
+        "p_at_5": 0.2,
         "hit_at_5": 1,
-        "p_at_10": 0.5,
+        "p_at_10": 0.4,
         "hit_at_10": 1
       },
       {
@@ -380,16 +380,16 @@
         "subtopic": "stop payment",
         "p_at_5": 0.2,
         "hit_at_5": 1,
-        "p_at_10": 0.3,
+        "p_at_10": 0.2,
         "hit_at_10": 1
       },
       {
         "id": "chq-003",
         "subtopic": "signature mismatch",
-        "p_at_5": 0.2,
-        "hit_at_5": 1,
-        "p_at_10": 0.1,
-        "hit_at_10": 1
+        "p_at_5": 0.0,
+        "hit_at_5": 0,
+        "p_at_10": 0.0,
+        "hit_at_10": 0
       },
       {
         "id": "chq-064",
@@ -404,7 +404,7 @@
         "subtopic": "notice and limitation",
         "p_at_5": 0.2,
         "hit_at_5": 1,
-        "p_at_10": 0.5,
+        "p_at_10": 0.2,
         "hit_at_10": 1
       },
       {
@@ -426,7 +426,7 @@
       {
         "id": "probe-con-007",
         "subtopic": "insurance repudiation",
-        "p_at_5": 0.4,
+        "p_at_5": 0.6,
         "hit_at_5": 1,
         "p_at_10": 0.5,
         "hit_at_10": 1
@@ -444,7 +444,7 @@
         "subtopic": "airline service",
         "p_at_5": 0.4,
         "hit_at_5": 1,
-        "p_at_10": 0.3,
+        "p_at_10": 0.5,
         "hit_at_10": 1
       },
       {
@@ -460,13 +460,13 @@
         "subtopic": "defective goods",
         "p_at_5": 0.2,
         "hit_at_5": 1,
-        "p_at_10": 0.3,
+        "p_at_10": 0.4,
         "hit_at_10": 1
       },
       {
         "id": "ten-005",
         "subtopic": "bona fide requirement eviction",
-        "p_at_5": 0.4,
+        "p_at_5": 0.2,
         "hit_at_5": 1,
         "p_at_10": 0.2,
         "hit_at_10": 1
@@ -482,7 +482,7 @@
       {
         "id": "ten-031",
         "subtopic": "rent arrears default",
-        "p_at_5": 0.6,
+        "p_at_5": 0.4,
         "hit_at_5": 1,
         "p_at_10": 0.5,
         "hit_at_10": 1
@@ -490,15 +490,15 @@
       {
         "id": "ten-032",
         "subtopic": "subletting",
-        "p_at_5": 0.6,
+        "p_at_5": 0.4,
         "hit_at_5": 1,
-        "p_at_10": 0.5,
+        "p_at_10": 0.3,
         "hit_at_10": 1
       },
       {
         "id": "ten-002",
         "subtopic": "rent increase standard rent",
-        "p_at_5": 0.8,
+        "p_at_5": 0.6,
         "hit_at_5": 1,
         "p_at_10": 0.6,
         "hit_at_10": 1
@@ -506,9 +506,9 @@
       {
         "id": "ten-060",
         "subtopic": "commercial premises eviction",
-        "p_at_5": 0.0,
-        "hit_at_5": 0,
-        "p_at_10": 0.1,
+        "p_at_5": 0.6,
+        "hit_at_5": 1,
+        "p_at_10": 0.5,
         "hit_at_10": 1
       }
     ],
@@ -662,17 +662,17 @@
       {
         "id": "chq-001",
         "subtopic": "insufficient funds",
-        "p_at_5": 0.4,
+        "p_at_5": 0.6,
         "hit_at_5": 1,
-        "p_at_10": 0.3,
+        "p_at_10": 0.4,
         "hit_at_10": 1
       },
       {
         "id": "chq-016",
         "subtopic": "stop payment",
-        "p_at_5": 0.6,
+        "p_at_5": 0.4,
         "hit_at_5": 1,
-        "p_at_10": 0.5,
+        "p_at_10": 0.4,
         "hit_at_10": 1
       },
       {
@@ -686,17 +686,17 @@
       {
         "id": "chq-064",
         "subtopic": "account closed",
-        "p_at_5": 0.6,
+        "p_at_5": 0.4,
         "hit_at_5": 1,
-        "p_at_10": 0.3,
+        "p_at_10": 0.2,
         "hit_at_10": 1
       },
       {
         "id": "chq-077",
         "subtopic": "notice and limitation",
-        "p_at_5": 0.2,
+        "p_at_5": 1.0,
         "hit_at_5": 1,
-        "p_at_10": 0.4,
+        "p_at_10": 1.0,
         "hit_at_10": 1
       },
       {
@@ -704,21 +704,21 @@
         "subtopic": "security cheque defence",
         "p_at_5": 0.2,
         "hit_at_5": 1,
-        "p_at_10": 0.3,
+        "p_at_10": 0.2,
         "hit_at_10": 1
       },
       {
         "id": "con-031",
         "subtopic": "insurance claim rejection",
-        "p_at_5": 0.8,
+        "p_at_5": 1.0,
         "hit_at_5": 1,
-        "p_at_10": 0.9,
+        "p_at_10": 1.0,
         "hit_at_10": 1
       },
       {
         "id": "probe-con-007",
         "subtopic": "insurance repudiation",
-        "p_at_5": 0.6,
+        "p_at_5": 0.8,
         "hit_at_5": 1,
         "p_at_10": 0.8,
         "hit_at_10": 1
@@ -734,15 +734,15 @@
       {
         "id": "con-019",
         "subtopic": "airline service",
-        "p_at_5": 0.4,
+        "p_at_5": 0.6,
         "hit_at_5": 1,
-        "p_at_10": 0.5,
+        "p_at_10": 0.6,
         "hit_at_10": 1
       },
       {
         "id": "con-022",
         "subtopic": "medical negligence",
-        "p_at_5": 0.8,
+        "p_at_5": 1.0,
         "hit_at_5": 1,
         "p_at_10": 0.7,
         "hit_at_10": 1
@@ -750,9 +750,9 @@
       {
         "id": "con-001",
         "subtopic": "defective goods",
-        "p_at_5": 0.4,
+        "p_at_5": 0.2,
         "hit_at_5": 1,
-        "p_at_10": 0.3,
+        "p_at_10": 0.2,
         "hit_at_10": 1
       },
       {
@@ -766,15 +766,15 @@
       {
         "id": "ten-001",
         "subtopic": "security deposit",
-        "p_at_5": 0.0,
-        "hit_at_5": 0,
-        "p_at_10": 0.1,
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
+        "p_at_10": 0.2,
         "hit_at_10": 1
       },
       {
         "id": "ten-031",
         "subtopic": "rent arrears default",
-        "p_at_5": 1.0,
+        "p_at_5": 0.8,
         "hit_at_5": 1,
         "p_at_10": 0.9,
         "hit_at_10": 1
@@ -784,7 +784,7 @@
         "subtopic": "subletting",
         "p_at_5": 0.8,
         "hit_at_5": 1,
-        "p_at_10": 0.8,
+        "p_at_10": 0.9,
         "hit_at_10": 1
       },
       {
@@ -798,8 +798,8 @@
       {
         "id": "ten-060",
         "subtopic": "commercial premises eviction",
-        "p_at_5": 0.0,
-        "hit_at_5": 0,
+        "p_at_5": 0.2,
+        "hit_at_5": 1,
         "p_at_10": 0.1,
         "hit_at_10": 1
       }

@@ -1,0 +1,107 @@
+{
+  "thresholds": {
+    "sim_floor": 0.44,
+    "sim_confident": 0.54,
+    "min_query_words": 5
+  },
+  "distributions": {
+    "retrieved_relevant": {
+      "n": 105,
+      "min": 0.298,
+      "p25": 0.496,
+      "median": 0.559,
+      "p75": 0.6,
+      "max": 0.677
+    },
+    "retrieved_irrelevant": {
+      "n": 75,
+      "min": 0.302,
+      "p25": 0.489,
+      "median": 0.547,
+      "p75": 0.595,
+      "max": 0.684
+    },
+    "in_scope_top1": {
+      "n": 18,
+      "min": 0.327,
+      "p25": 0.534,
+      "median": 0.602,
+      "p75": 0.634,
+      "max": 0.684
+    },
+    "out_of_scope_top1": {
+      "n": 30,
+      "min": 0.264,
+      "p25": 0.356,
+      "median": 0.414,
+      "p75": 0.472,
+      "max": 0.557
+    }
+  },
+  "in_scope_states": {
+    "chq-001": "confident",
+    "chq-016": "confident",
+    "chq-003": "confident",
+    "chq-064": "confident",
+    "chq-077": "weak",
+    "probe-chq-010": "confident",
+    "con-031": "confident",
+    "probe-con-007": "confident",
+    "con-014": "confident",
+    "con-019": "weak",
+    "con-022": "weak",
+    "con-001": "abstain",
+    "ten-005": "confident",
+    "ten-001": "weak",
+    "ten-031": "confident",
+    "ten-032": "confident",
+    "ten-002": "confident",
+    "ten-060": "abstain"
+  },
+  "rates": {
+    "in_scope": {
+      "confident": 0.667,
+      "weak": 0.222,
+      "abstain": 0.111
+    },
+    "out_of_scope": {
+      "confident": 0.0,
+      "weak": 0.367,
+      "abstain": 0.633
+    }
+  },
+  "weak_spot_effect": [
+    {
+      "id": "chq-003",
+      "subtopic": "signature mismatch",
+      "state": "confident",
+      "p_at_10_unfloored": 0.1,
+      "retained": 10,
+      "p_retained": 0.1
+    },
+    {
+      "id": "probe-chq-010",
+      "subtopic": "security cheque defence",
+      "state": "confident",
+      "p_at_10_unfloored": 0.1,
+      "retained": 10,
+      "p_retained": 0.1
+    },
+    {
+      "id": "ten-001",
+      "subtopic": "security deposit",
+      "state": "weak",
+      "p_at_10_unfloored": 0.1,
+      "retained": 10,
+      "p_retained": 0.1
+    },
+    {
+      "id": "ten-060",
+      "subtopic": "commercial premises eviction",
+      "state": "abstain",
+      "p_at_10_unfloored": 0.5,
+      "retained": 0,
+      "p_retained": 0.0
+    }
+  ]
+}

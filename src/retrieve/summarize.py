@@ -17,6 +17,19 @@ from dataclasses import dataclass
 
 _SENT_SPLIT = re.compile(r"(?<=[.!?])\s+")
 
+WEAK_CAUTION = (
+    "Weak match: this case is only loosely similar to your situation. "
+    "Treat it with caution; it may involve a different fact pattern."
+)
+
+ABSTAIN_MESSAGE = (
+    "Nothing sufficiently similar was retrieved from the case corpus for "
+    "your situation. That does not mean your problem has no legal remedy; "
+    "it means this tool could not find comparable appellate judgments to "
+    "show you. Please consult a qualified advocate, or approach your "
+    "District Legal Services Authority (DLSA) or NALSA for free legal aid."
+)
+
 
 @dataclass(frozen=True)
 class SummaryPart:

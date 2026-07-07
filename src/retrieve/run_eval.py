@@ -95,9 +95,15 @@ def run_config(
             payload: dict | str = facts
         else:
             payload = text
-        results = retrieve_similar(
-            payload, q["issue_type"], k=max(K_VALUES), embedder=embedder, max_chunk_pos=max_chunk_pos
+        response = retrieve_similar(
+            payload,
+            q["issue_type"],
+            k=max(K_VALUES),
+            embedder=embedder,
+            max_chunk_pos=max_chunk_pos,
+            apply_floor=False,
         )
+        results = response.cases
         produced.extend(results)
         pattern = re.compile(q["relevance_regex"], re.IGNORECASE)
         relevant = [bool(pattern.search(str(docs.loc[r.doc_id, "text"]))) for r in results]

@@ -1,6 +1,6 @@
 # Statute explainer grounding check
 
-Automated checks run: 169 across 19 explainer outputs.
+Automated checks run: 206 across 27 explainer outputs.
 Violations: 0.
 
 ## What these checks cover
@@ -33,3 +33,8 @@ no-statute state with the disclaimer.
    numbers, and that no deadline is computed; whether the
    procedure described is legally accurate and current needs a
    one-time human review, same as the glosses.
+5. Prep pack completeness: the document checklists and lawyer
+   question lists are static hand-written prose. Automation
+   verifies their references resolve and that they state no law;
+   whether they are sensible and reasonably complete for each
+   issue area needs the same one-time human review.

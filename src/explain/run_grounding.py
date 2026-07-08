@@ -27,6 +27,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
+from src.draft.prep_pack import build_prep_pack
 from src.explain.explain import GLOSSES, ISSUE_SECTIONS, explain_rights
 from src.explain.pathways import explain_pathways
 from src.explain.statutes import get_section, load_acts
@@ -144,6 +145,51 @@ def check() -> tuple[int, list[str], int]:
         if response.status != "no_pathways" or response.pathways or not response.message:
             violations.append(f"pathways {issue}: expected explicit no-pathway state")
 
+    # Phase 5a: prep pack. Every reference resolves to a real built
+    # output; checklists and questions cite no section numbers at all
+    # (they must not state law); the timeline is a pure passthrough;
+    # unmapped issues route out with the disclaimer.
+    sample_facts = {
+        "timeline": [
+            {"order": 1, "event_cue": "pay", "description": "sample event", "span": [0, 12]}
+        ]
+    }
+    for issue in ("cheque", "consumer", "tenancy"):
+        outputs += 2
+        pack = build_prep_pack(issue, sample_facts)
+        rights = explain_rights(issue)
+        valid_sections = {(s.act_id, s.section) for s in rights.sections}
+        valid_pathways = {p.pathway_id for p in explain_pathways(issue).pathways}
+        for ref in pack.rights_refs:
+            checks += 1
+            if (ref.act_id, ref.section) not in valid_sections or get_section(ref.act_id, ref.section) is None:
+                violations.append(f"prep {issue}: rights ref {ref.act_id} s.{ref.section} does not resolve")
+        for pref in pack.pathway_refs:
+            checks += 1
+            if pref.pathway_id not in valid_pathways:
+                violations.append(f"prep {issue}: pathway ref {pref.pathway_id} does not resolve")
+        checks += 3
+        static_prose = " ".join([*pack.documents_checklist, *pack.lawyer_questions])
+        if _SECTION_REF.findall(static_prose):
+            violations.append(f"prep {issue}: checklist or question prose cites a section number")
+        if pack.timeline != sample_facts["timeline"]:
+            violations.append(f"prep {issue}: timeline is not a pure passthrough")
+        if not pack.disclaimer:
+            violations.append(f"prep {issue}: missing disclaimer")
+        empty = build_prep_pack(issue, None)
+        checks += 1
+        if empty.timeline or not empty.timeline_note:
+            violations.append(f"prep {issue}: missing graceful empty timeline state")
+
+    for issue in ("other", "something_unknown"):
+        checks += 1
+        outputs += 1
+        pack = build_prep_pack(issue)
+        if pack.status != "no_prep_pack" or pack.documents_checklist or not pack.message:
+            violations.append(f"prep {issue}: expected explicit no-prep-pack state")
+        if not pack.disclaimer:
+            violations.append(f"prep {issue}: missing disclaimer")
+
     return checks, violations, outputs
 
 
@@ -190,6 +236,11 @@ def main() -> None:
         "   numbers, and that no deadline is computed; whether the",
         "   procedure described is legally accurate and current needs a",
         "   one-time human review, same as the glosses.",
+        "5. Prep pack completeness: the document checklists and lawyer",
+        "   question lists are static hand-written prose. Automation",
+        "   verifies their references resolve and that they state no law;",
+        "   whether they are sensible and reasonably complete for each",
+        "   issue area needs the same one-time human review.",
     ]
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     report = "\n".join(lines) + "\n"

@@ -28,6 +28,7 @@ import re
 from pathlib import Path
 
 from src.explain.explain import GLOSSES, ISSUE_SECTIONS, explain_rights
+from src.explain.pathways import explain_pathways
 from src.explain.statutes import get_section, load_acts
 
 RESULTS_DIR = Path("results")
@@ -101,6 +102,48 @@ def check() -> tuple[int, list[str], int]:
         if not result.disclaimer:
             violations.append(f"{issue}: missing disclaimer")
 
+    # Phase 4b: pathways. Every section reference resolves (resolution
+    # itself raises on dangling pointers); no prose cites a section
+    # number outside its own reference list; nothing computes days left;
+    # unmapped issues route out.
+    days_left = re.compile(r"\d+\s*days?\s+(?:left|remaining)", re.IGNORECASE)
+    for issue in ("cheque", "consumer", "tenancy"):
+        outputs += 1
+        response = explain_pathways(issue)
+        if not response.disclaimer:
+            violations.append(f"pathways {issue}: missing disclaimer")
+        for pathway in response.pathways:
+            checks += 2
+            allowed = {ref.section for ref in pathway.section_refs}
+            prose = " ".join(
+                [pathway.what_it_is, pathway.when_it_makes_sense, *pathway.pros, *pathway.cons]
+            )
+            for ref in _SECTION_REF.findall(prose):
+                if ref not in allowed:
+                    violations.append(
+                        f"pathways {issue}/{pathway.pathway_id}: prose cites section {ref} "
+                        "outside its reference list"
+                    )
+            if days_left.search(prose):
+                violations.append(
+                    f"pathways {issue}/{pathway.pathway_id}: prose computes days left"
+                )
+        for flag in response.limitation_flags:
+            checks += 2
+            if flag.section_ref is not None and get_section(flag.section_ref.act_id, flag.section_ref.section) is None:
+                violations.append(f"pathways {issue}: limitation flag cites missing section")
+            if days_left.search(flag.statement):
+                violations.append(f"pathways {issue}: limitation statement computes days left")
+            if not flag.caveat:
+                violations.append(f"pathways {issue}: limitation flag missing caveat")
+
+    for issue in ("other", "something_unknown"):
+        checks += 1
+        outputs += 1
+        response = explain_pathways(issue)
+        if response.status != "no_pathways" or response.pathways or not response.message:
+            violations.append(f"pathways {issue}: expected explicit no-pathway state")
+
     return checks, violations, outputs
 
 
@@ -141,6 +184,12 @@ def main() -> None:
         "3. The Model Tenancy Act caveat: it is a model law and the user's",
         "   state rent act governs; the caveat field carries this on every",
         "   tenancy citation and must remain user-visible downstream.",
+        "4. Pathway accuracy and currency: the pathway descriptions and",
+        "   pros/cons are static hand-written procedural prose. Automation",
+        "   verifies their citations, the absence of fabricated section",
+        "   numbers, and that no deadline is computed; whether the",
+        "   procedure described is legally accurate and current needs a",
+        "   one-time human review, same as the glosses.",
     ]
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     report = "\n".join(lines) + "\n"

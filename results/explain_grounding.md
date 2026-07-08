@@ -1,6 +1,6 @@
 # Statute explainer grounding check
 
-Automated checks run: 133 across 14 explainer outputs.
+Automated checks run: 169 across 19 explainer outputs.
 Violations: 0.
 
 ## What these checks cover
@@ -27,3 +27,9 @@ no-statute state with the disclaimer.
 3. The Model Tenancy Act caveat: it is a model law and the user's
    state rent act governs; the caveat field carries this on every
    tenancy citation and must remain user-visible downstream.
+4. Pathway accuracy and currency: the pathway descriptions and
+   pros/cons are static hand-written procedural prose. Automation
+   verifies their citations, the absence of fabricated section
+   numbers, and that no deadline is computed; whether the
+   procedure described is legally accurate and current needs a
+   one-time human review, same as the glosses.

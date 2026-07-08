@@ -28,7 +28,11 @@ import json
 import re
 from pathlib import Path
 
+import dataclasses
+
+from src.draft.notice import TEMPLATE, draft_s138_notice
 from src.draft.prep_pack import build_prep_pack
+from src.draft.verify import verify_draft
 from src.explain.explain import GLOSSES, ISSUE_SECTIONS, explain_rights
 from src.explain.pathways import explain_pathways
 from src.explain.statutes import get_section, load_acts
@@ -222,6 +226,62 @@ def check() -> tuple[int, list[str], int]:
         if not pack.disclaimer:
             violations.append(f"prep {issue}: missing disclaimer")
 
+    # Phase 5b: the s.138 demand notice draft.
+    # Template lint: no numeric statutory claims (day counts) in the
+    # static template; every section number it cites resolves.
+    checks += 2
+    if re.search(r"\d+\s*days?", TEMPLATE):
+        violations.append("notice template states a day count instead of referencing s.138")
+    for ref in _SECTION_REF.findall(TEMPLATE):
+        if get_section("ni_act_1881", ref) is None:
+            violations.append(f"notice template cites unresolvable section {ref}")
+
+    sample_facts = {
+        "parties": [
+            {"role": "complainant", "kind": "person", "mention": "I", "role_word": None, "name": None},
+            {"role": "other_side", "kind": "person", "mention": "A customer", "role_word": "customer", "name": None},
+        ],
+        "amounts": [{"raw": "Rs 1,20,000", "value": 120000, "currency": "INR", "purpose": "cheque_amount", "span": [30, 41]}],
+        "dates": [],
+        "timeline": [],
+        "slots": {
+            "cheque_amount": {"value": 120000, "raw": "Rs 1,20,000", "span": [30, 41], "qualifier": None},
+            "drawer": {"value": 1, "raw": "A customer", "span": [2, 12], "qualifier": None},
+            "bounce_reason": {"value": "insufficient_funds", "raw": "insufficient funds", "span": [60, 78], "qualifier": None},
+            "bounce_dates": [{"value": "2026-07-03", "raw": "the 3rd of this month", "span": [80, 101], "qualifier": "memo"}],
+            "cheque_date": {"value": "2026-05-01", "raw": "post dated", "span": [110, 120], "qualifier": None},
+            "cheque_number": None,
+            "bank": None,
+        },
+    }
+    outputs += 1
+    draft = draft_s138_notice(sample_facts)
+    draft_violations = verify_draft(draft, sample_facts)
+    checks += 8
+    violations.extend(f"notice draft: {v}" for v in draft_violations)
+    if draft.status != "ok":
+        violations.append("notice draft: expected a rendered draft from sample facts")
+    if "cheque_number" not in draft.slots_missing:
+        violations.append("notice draft: cheque_number should be a missing placeholder")
+
+    # Teeth check, run every time: tamper one marked value with a fact
+    # that is NOT in the facts object; the verifier MUST flag it. If it
+    # does not, the traceability check has lost its teeth.
+    checks += 1
+    tampered = dataclasses.replace(
+        draft, body_text=draft.body_text.replace("Rs 1,20,000", "Rs 9,99,999")
+    )
+    if not any("not traceable" in v for v in verify_draft(tampered, sample_facts)):
+        violations.append("notice draft: TEETH FAILURE, tampered value not caught")
+
+    # Abstain when no critical fact group is present.
+    checks += 1
+    outputs += 1
+    empty = draft_s138_notice({"parties": [], "amounts": [], "dates": [], "timeline": [], "slots": {}})
+    if empty.status != "insufficient_facts" or empty.body_text or not empty.message:
+        violations.append("notice draft: expected insufficient_facts abstention")
+    violations.extend(f"notice abstain: {v}" for v in verify_draft(empty, {"slots": {}}))
+
     return checks, violations, outputs
 
 
@@ -273,6 +333,12 @@ def main() -> None:
         "   verifies their references resolve and that they state no law;",
         "   whether they are sensible and reasonably complete for each",
         "   issue area needs the same one-time human review.",
+        "6. Notice template quality: the demand notice template is static",
+        "   hand-written legal prose. Automation verifies slot",
+        "   traceability, marking, placeholders, abstention, and that no",
+        "   statutory day count is stated in the template; whether the",
+        "   notice wording is legally adequate for sending needs a",
+        "   lawyer's review, which the draft warning itself demands.",
     ]
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     report = "\n".join(lines) + "\n"

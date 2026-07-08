@@ -1,6 +1,6 @@
 # Statute explainer grounding check
 
-Automated checks run: 214 across 27 explainer outputs.
+Automated checks run: 226 across 29 explainer outputs.
 Violations: 0.
 
 ## What these checks cover
@@ -38,3 +38,9 @@ no-statute state with the disclaimer.
    verifies their references resolve and that they state no law;
    whether they are sensible and reasonably complete for each
    issue area needs the same one-time human review.
+6. Notice template quality: the demand notice template is static
+   hand-written legal prose. Automation verifies slot
+   traceability, marking, placeholders, abstention, and that no
+   statutory day count is stated in the template; whether the
+   notice wording is legally adequate for sending needs a
+   lawyer's review, which the draft warning itself demands.

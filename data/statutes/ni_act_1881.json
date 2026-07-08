@@ -1,0 +1,24 @@
+{
+  "act": "The Negotiable Instruments Act, 1881",
+  "source": {
+    "publisher": "India Code (official)",
+    "url": "https://www.indiacode.nic.in/bitstream/123456789/15327/1/negotiable_instruments_act,_1881.pdf",
+    "downloaded": "2026-07-07",
+    "note": "Mechanically extracted from the official PDF; verify against the source before production use."
+  },
+  "caveat": null,
+  "sections": {
+    "138": {
+      "title": "Dishonour of cheque for insufficiency, etc., of funds in the account",
+      "text": "Where any cheque drawn by a person on an account maintained by him with a banker for payment of any amount of money to another person from out of that account for the discharge, in whole or in part, of any debt or other liability, is returned by the bank unpaid, either because of the amount of money standing to the credit of that account is insufficient to honour the cheque or that it exceeds the amount arranged to be paid from that account by an agreement made with that bank, such person shall be deemed to have committed an offence and shall, without prejudice to any other provision of this Act, be punished with imprisonment for a term which may be extended to two years’, or with fine which may extend to twic e the amount of the cheque, or with both: Provided that nothing contained in this section shall apply unless— (a) thecheque has been presented to the bank within a period of six months from the date on which it is drawn or within the period of its validity, whichever is earlier; (b) the payee or the holder in due course of the cheque, as the case may be, makes a demand for the payment of the said amount of money by giving a notice; in writing, to the drawer of the cheque, within thirty days of the receipt of information by him from the bank regarding the return of the cheque as unpaid; and (c) the drawer of such cheque fails to make the payment of the said amount of money to the payee or, as the case may be, to the holder in due course of the cheque, within fifteen days of the receipt of the said notice. Explanation.—For the purposes of this section, “debt of other liability” means a legally enforceable debt or other liability."
+    },
+    "139": {
+      "title": "Presumption in favour of holder",
+      "text": "It shall be presumed, unless the contrary is proved, that the holder of a cheque received the cheque of the nature referred to in section138 for the discharge, in whole or in part, of any debt or other liability."
+    },
+    "142": {
+      "title": "Cognizance of offences",
+      "text": "(1) Notwithstanding anything contained in the Code of Criminal Procedure, 1973 (2 of 1974),— (a) no court shall take cognizance of any offence punishable under section 138 except upon a complaint, in writing, made by the payee or, as the case may be, the holder in due course of the cheque; (b) such complaint is made within one month of the date on which the cause of action arises under clause (c) of the proviso to section 138: Provided that the cognizance of a complaint may be taken by the Court after the prescribed period, if the complainant satisfies the Court that he had sufficient cause for not making a complaint within such period; (c) no court inferior to that of a Metro politan Magistrate or a Judicial Magistrate of the first class shall try any offence punishable under section 138.. (2) The offence under section 138 shall be inquired into and tried only by a court within whose local jurisdiction,— (a) if the cheque is delivered for collection through an account, the branch of the bank where the payee or holder in due course, as the case may be, maintains the account, is situated; or (b) if the cheque is presented for payment by the payee or holder in due course, otherwise through an account, the branch of the drawee bank where the drawer maintains the account, is situated. Explanation.—For the purposes of clause ( a), where a cheque is delivered for collection at any branch of the bank of the payee or holder in due cours e, then, the cheque shall be deemed to have been delivered to the branch of the bank in which the payee or holder in due course, as the case may be, maintains the account."
+    }
+  }
+}

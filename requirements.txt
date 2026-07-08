@@ -12,4 +12,5 @@ chromadb==0.5.23
 jupyter==1.1.1
 spacy==3.8.14
 click==8.4.2
+pypdf==6.14.2
 en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl

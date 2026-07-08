@@ -1,6 +1,6 @@
 # Statute explainer grounding check
 
-Automated checks run: 209 across 27 explainer outputs.
+Automated checks run: 214 across 27 explainer outputs.
 Violations: 0.
 
 ## What these checks cover

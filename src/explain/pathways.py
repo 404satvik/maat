@@ -78,6 +78,11 @@ class PathwaysExplanation:
     issue_type: str
     pathways: list[Pathway] = field(default_factory=list)
     limitation_flags: list[LimitationFlag] = field(default_factory=list)
+    # Act-level caveats from referenced sections (for example the Model
+    # Tenancy Act model-law warning), deduplicated, order-preserving.
+    # Structural guarantee; the tenancy pathway prose restates the point
+    # as human-readable reinforcement, not as the mechanism.
+    caveats: list[str] = field(default_factory=list)
     message: str | None = None
     disclaimer: str = DISCLAIMER
 
@@ -392,6 +397,18 @@ def explain_pathways(issue_type: str, facts: dict | None = None) -> PathwaysExpl
         )
         for statement, ref in _RAW_LIMITATION.get(issue_type, ())
     ]
+    caveats: list[str] = []
+    referenced = [ref for p in pathways for ref in p.section_refs] + [
+        f.section_ref for f in flags if f.section_ref is not None
+    ]
+    for ref in referenced:
+        record = get_section(ref.act_id, ref.section)
+        if record and record["caveat"] and record["caveat"] not in caveats:
+            caveats.append(record["caveat"])
     return PathwaysExplanation(
-        status="ok", issue_type=issue_type, pathways=pathways, limitation_flags=flags
+        status="ok",
+        issue_type=issue_type,
+        pathways=pathways,
+        limitation_flags=flags,
+        caveats=caveats,
     )

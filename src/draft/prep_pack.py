@@ -158,9 +158,9 @@ def build_prep_pack(issue_type: str, facts: dict | None = None) -> PrepPack:
     pathways = explain_pathways(issue_type, facts)
     timeline = list(facts.get("timeline", [])) if facts else []
     caveats: list[str] = []
-    for section in rights.sections:
-        if section.caveat and section.caveat not in caveats:
-            caveats.append(section.caveat)
+    for caveat in [s.caveat for s in rights.sections] + list(pathways.caveats):
+        if caveat and caveat not in caveats:
+            caveats.append(caveat)
     return PrepPack(
         status="ok",
         issue_type=issue_type,

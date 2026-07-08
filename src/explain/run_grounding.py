@@ -130,6 +130,20 @@ def check() -> tuple[int, list[str], int]:
                 violations.append(
                     f"pathways {issue}/{pathway.pathway_id}: prose computes days left"
                 )
+        # Caveat visibility, same teeth as the prep pack check: any
+        # referenced section whose act carries a non-null caveat must
+        # have that caveat text present in the serialized output.
+        serialized_pathways = json.dumps(response.to_dict())
+        for pathway in response.pathways:
+            for ref in pathway.section_refs:
+                act_caveat = acts[ref.act_id].get("caveat")
+                if act_caveat:
+                    checks += 1
+                    if act_caveat not in serialized_pathways:
+                        violations.append(
+                            f"pathways {issue}/{pathway.pathway_id}: caveat of "
+                            f"{ref.act_id} s.{ref.section} is dropped from the output"
+                        )
         for flag in response.limitation_flags:
             checks += 2
             if flag.section_ref is not None and get_section(flag.section_ref.act_id, flag.section_ref.section) is None:
@@ -184,7 +198,9 @@ def check() -> tuple[int, list[str], int]:
                         f"prep {issue}: caveat of {ref.act_id} s.{ref.section} "
                         "is dropped from the prep pack output"
                     )
-        checks += 3
+        checks += 4
+        if len(pack.caveats) != len(set(pack.caveats)):
+            violations.append(f"prep {issue}: duplicate entries in pack caveats")
         static_prose = " ".join([*pack.documents_checklist, *pack.lawyer_questions])
         if _SECTION_REF.findall(static_prose):
             violations.append(f"prep {issue}: checklist or question prose cites a section number")

@@ -24,6 +24,7 @@ Run from the repo root:
 
 from __future__ import annotations
 
+import json
 import re
 from pathlib import Path
 
@@ -168,6 +169,21 @@ def check() -> tuple[int, list[str], int]:
             checks += 1
             if pref.pathway_id not in valid_pathways:
                 violations.append(f"prep {issue}: pathway ref {pref.pathway_id} does not resolve")
+        # Caveat visibility: if any cited section's act carries a
+        # non-null caveat in data/statutes (the MTA model-law warning),
+        # that caveat text must be present somewhere in the prep pack
+        # output. Searched against the serialized pack so the check is
+        # representation-agnostic and fails if the caveat is dropped.
+        serialized = json.dumps(pack.to_dict())
+        for ref in pack.rights_refs:
+            act_caveat = acts[ref.act_id].get("caveat")
+            if act_caveat:
+                checks += 1
+                if act_caveat not in serialized:
+                    violations.append(
+                        f"prep {issue}: caveat of {ref.act_id} s.{ref.section} "
+                        "is dropped from the prep pack output"
+                    )
         checks += 3
         static_prose = " ".join([*pack.documents_checklist, *pack.lawyer_questions])
         if _SECTION_REF.findall(static_prose):

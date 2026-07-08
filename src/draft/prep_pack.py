@@ -52,6 +52,11 @@ class PrepPack:
     rights_refs: list[SectionRef] = field(default_factory=list)
     pathway_refs: list[PathwayRef] = field(default_factory=list)
     limitation_flags: list[LimitationFlag] = field(default_factory=list)
+    # Act-level caveats from cited sections (for example the Model
+    # Tenancy Act model-law warning), deduplicated, order-preserving.
+    # Pack-level rather than per-ref so renderers cannot drop it with a
+    # compact reference display.
+    caveats: list[str] = field(default_factory=list)
     message: str | None = None
     disclaimer: str = DISCLAIMER
 
@@ -152,6 +157,10 @@ def build_prep_pack(issue_type: str, facts: dict | None = None) -> PrepPack:
     rights = explain_rights(issue_type, facts)
     pathways = explain_pathways(issue_type, facts)
     timeline = list(facts.get("timeline", [])) if facts else []
+    caveats: list[str] = []
+    for section in rights.sections:
+        if section.caveat and section.caveat not in caveats:
+            caveats.append(section.caveat)
     return PrepPack(
         status="ok",
         issue_type=issue_type,
@@ -165,4 +174,5 @@ def build_prep_pack(issue_type: str, facts: dict | None = None) -> PrepPack:
         ],
         pathway_refs=[PathwayRef(pathway_id=p.pathway_id, name=p.name) for p in pathways.pathways],
         limitation_flags=list(pathways.limitation_flags),
+        caveats=caveats,
     )

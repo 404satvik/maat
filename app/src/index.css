@@ -27,3 +27,18 @@
     outline-offset: 2px;
   }
 }
+
+/* Print the prep pack as a clean worksheet: drop the app chrome, keep the
+   paper-and-ink look on white. */
+@media print {
+  header,
+  footer,
+  aside,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+}

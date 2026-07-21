@@ -7,7 +7,13 @@
 
   --color-lapis: #1f4e79;
   --color-lapis-hover: #163a5a;
+  --color-lapis-wash: #e9eef4;
   --color-ochre: #b8863b;
+  --color-ochre-deep: #8a6222;
+  --color-ochre-wash: #f4ead4;
+  --color-paper-raised: #fbf9f3;
+  --color-brick: #8f3d2c;
+  --color-brick-wash: #f5e6e1;
 
   --font-serif: "Fraunces", "Newsreader", Georgia, serif;
   --font-sans: "Public Sans", "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;

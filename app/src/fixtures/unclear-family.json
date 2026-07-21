@@ -1,0 +1,83 @@
+{
+ "id": "unclear-family",
+ "title": "A family matter, hard to describe",
+ "complaint": "There is a dispute in our family and it has become very ugly. Everyone has said things and done things. I do not even know where to start explaining. Can a lawyer just listen to everything first?",
+ "anchor_date": "2026-07-08",
+ "classification": {
+  "label": "other",
+  "score": 0.9823,
+  "score_type": "probability",
+  "scores": {
+   "consumer": 0.0046,
+   "cheque": 0.0059,
+   "tenancy": 0.0073,
+   "other": 0.9823
+  }
+ },
+ "facts": {
+  "meta": {
+   "issue_type": "other",
+   "anchor_date": "2026-07-08",
+   "complaint_text": "There is a dispute in our family and it has become very ugly. Everyone has said things and done things. I do not even know where to start explaining. Can a lawyer just listen to everything first?",
+   "extractor_version": "0.1"
+  },
+  "parties": [
+   {
+    "role": "complainant",
+    "kind": "person",
+    "mention": "our",
+    "role_word": null,
+    "name": null,
+    "spans": [
+     [
+      22,
+      25
+     ]
+    ]
+   }
+  ],
+  "amounts": [],
+  "dates": [],
+  "places": [],
+  "timeline": [],
+  "slots": {},
+  "unresolved": []
+ },
+ "retrieval": {
+  "query_confidence": "abstain",
+  "cases": [],
+  "message": "Nothing sufficiently similar was retrieved from the case corpus for your situation. That does not mean your problem has no legal remedy; it means this tool could not find comparable appellate judgments to show you. Please consult a qualified advocate, or approach your District Legal Services Authority (DLSA) or NALSA for free legal aid.",
+  "abstain_reason": "no judgment scored above the similarity floor"
+ },
+ "rights": {
+  "status": "no_statute",
+  "issue_type": "other",
+  "sections": [],
+  "message": "No applicable statute was retrieved from the bundled statute set for this issue. That does not mean no law applies to your situation; it means this tool does not have a curated act to show you. Please consult a qualified advocate, or approach your District Legal Services Authority (DLSA) or NALSA for free legal aid.",
+  "disclaimer": "This is legal information, not legal advice. It does not predict any outcome and is not a substitute for a lawyer. Please consult a qualified advocate."
+ },
+ "pathways": {
+  "status": "no_pathways",
+  "issue_type": "other",
+  "pathways": [],
+  "limitation_flags": [],
+  "caveats": [],
+  "message": "No pathway guidance is available for this issue from the covered issue areas. That does not mean you have no options; it means this tool cannot responsibly lay them out. Please consult a qualified advocate, or approach your District Legal Services Authority (DLSA) or NALSA for free legal aid.",
+  "disclaimer": "This is legal information, not legal advice. It does not predict any outcome and is not a substitute for a lawyer. Please consult a qualified advocate."
+ },
+ "prep_pack": {
+  "status": "no_prep_pack",
+  "issue_type": "other",
+  "documents_checklist": [],
+  "lawyer_questions": [],
+  "timeline": [],
+  "timeline_note": null,
+  "rights_refs": [],
+  "pathway_refs": [],
+  "limitation_flags": [],
+  "caveats": [],
+  "message": "No prep pack is available for this issue from the covered issue areas. The best preparation is still the same: gather every document connected to your problem, write down what happened in date order, and consult a qualified advocate, or approach your District Legal Services Authority (DLSA) or NALSA for free legal aid.",
+  "disclaimer": "This is legal information, not legal advice. It does not predict any outcome and is not a substitute for a lawyer. Please consult a qualified advocate."
+ },
+ "draft": null
+}

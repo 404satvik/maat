@@ -1,0 +1,561 @@
+{
+ "id": "tenancy-deposit",
+ "title": "Landlord will not return the deposit",
+ "complaint": "I vacated my rented flat two months ago after giving proper notice. The landlord has not returned my security deposit of Rs 50,000 and now claims painting charges that were never mentioned in the agreement.",
+ "anchor_date": "2026-07-08",
+ "classification": {
+  "label": "tenancy",
+  "score": 0.9814,
+  "score_type": "probability",
+  "scores": {
+   "consumer": 0.0057,
+   "cheque": 0.0066,
+   "tenancy": 0.9814,
+   "other": 0.0063
+  }
+ },
+ "facts": {
+  "meta": {
+   "issue_type": "tenancy",
+   "anchor_date": "2026-07-08",
+   "complaint_text": "I vacated my rented flat two months ago after giving proper notice. The landlord has not returned my security deposit of Rs 50,000 and now claims painting charges that were never mentioned in the agreement.",
+   "extractor_version": "0.1"
+  },
+  "parties": [
+   {
+    "role": "complainant",
+    "kind": "person",
+    "mention": "I",
+    "role_word": null,
+    "name": null,
+    "spans": [
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   {
+    "role": "other_side",
+    "kind": "person",
+    "mention": "The landlord",
+    "role_word": "landlord",
+    "name": null,
+    "spans": [
+     [
+      68,
+      80
+     ]
+    ]
+   }
+  ],
+  "amounts": [
+   {
+    "raw": "Rs 50,000",
+    "value": 50000,
+    "currency": "INR",
+    "purpose": "deposit",
+    "span": [
+     121,
+     130
+    ]
+   }
+  ],
+  "dates": [
+   {
+    "raw": "two months ago",
+    "iso": "2026-05-08",
+    "approximate": true,
+    "resolution": "relative_to_anchor",
+    "span": [
+     25,
+     39
+    ],
+    "date_range": [
+     "2026-04-23",
+     "2026-05-23"
+    ]
+   }
+  ],
+  "places": [],
+  "timeline": [
+   {
+    "order": 1,
+    "event_cue": "vacate",
+    "description": "I vacated my rented flat two months ago after giving proper notice.",
+    "date_index": 0,
+    "amount_indices": [],
+    "date_basis": "narrative",
+    "span": [
+     0,
+     67
+    ]
+   },
+   {
+    "order": 2,
+    "event_cue": "return",
+    "description": "The landlord has not returned my security deposit of Rs 50,000 and now claims painting charges that were never mentioned in the agreement.",
+    "date_index": null,
+    "amount_indices": [
+     0
+    ],
+    "date_basis": "narrative",
+    "span": [
+     68,
+     206
+    ]
+   }
+  ],
+  "slots": {
+   "monthly_rent": null,
+   "deposit_amount": {
+    "value": 50000,
+    "raw": "Rs 50,000",
+    "span": [
+     121,
+     130
+    ],
+    "qualifier": null
+   },
+   "agreement_start": null,
+   "agreement_end_or_duration": null,
+   "notice_given_date": null,
+   "vacated_date": {
+    "value": "2026-05-08",
+    "raw": "two months ago",
+    "span": [
+     25,
+     39
+    ],
+    "qualifier": null
+   },
+   "landlord": {
+    "value": 1,
+    "raw": "The landlord",
+    "span": [
+     68,
+     80
+    ],
+    "qualifier": null
+   },
+   "complainant_side": {
+    "value": "tenant",
+    "raw": "I vacated",
+    "span": [
+     0,
+     9
+    ],
+    "qualifier": null
+   },
+   "tenant": {
+    "value": 0,
+    "raw": "I",
+    "span": [
+     0,
+     1
+    ],
+    "qualifier": null
+   },
+   "dispute_object": {
+    "value": "deposit_refund",
+    "raw": "deposit",
+    "span": [
+     110,
+     117
+    ],
+    "qualifier": null
+   }
+  },
+  "unresolved": [
+   {
+    "kind": "slot",
+    "reason": "not mentioned in complaint",
+    "field": "monthly_rent",
+    "raw": null
+   },
+   {
+    "kind": "slot",
+    "reason": "not mentioned in complaint",
+    "field": "agreement_start",
+    "raw": null
+   },
+   {
+    "kind": "slot",
+    "reason": "not mentioned in complaint",
+    "field": "agreement_end_or_duration",
+    "raw": null
+   },
+   {
+    "kind": "slot",
+    "reason": "not mentioned in complaint",
+    "field": "notice_given_date",
+    "raw": null
+   }
+  ]
+ },
+ "retrieval": {
+  "query_confidence": "weak",
+  "cases": [
+   {
+    "doc_id": "predex-test-290",
+    "case_name": "Mistry Premjibhai Vithaldas Vs. Ganeshbhai Keshavji",
+    "issue_area": "tenancy",
+    "similarity": 0.5266,
+    "matched_passage": "made by a tenant who has received a notice from his landlord under subsection (2) of section 12, the Court shall make an order directing the tenant to deposit in Court forthwith and thereafter monthly or periodically, such amount of rent or permitted increases as the Court considers to be reasonably due to the landlord pending the final decision of the application, and a copy of such order shall be served upon the landlord. Out of the amount so deposited, the Court may make order for the payment of such reasonable sum to the landlord towards payment of rent or increases due to. him, as it thinks fit. If the tenant fails to deposit such amount, his application shall be dismissed.(4) Where at any stage of a suit for recovery of rent whether with or without a claim for possession of the premises, the Court is satisfied that the tenant is withholding the rent on the ground that the rent is excessive and standard rent should be fixed the Court shall, and in any other case if it appears to the Court that it is just and proper to make such an order the Court may, make an order directing",
+    "summary": [
+     {
+      "text": "The appeal was granted by the Supreme Court.",
+      "source": "dataset_label"
+     },
+     {
+      "text": "made by a tenant who has received a notice from his landlord under subsection (2) of section 12, the Court shall make an order directing the tenant to deposit in Court forthwith and thereafter monthly or periodically, such amount of rent or permitted increases as the Court considers to be reasonably due to the landlord pending the final decision of the application, and a copy of such order shall be served upon the landlord. Out of the amount so deposited, the Court may make order for the payment of such reasonable sum to the landlord towards payment of rent or increases due to.",
+      "source": "judgment_text"
+     },
+     {
+      "text": "In the face of detailed findings given by the Appellate Court, which the High Court could not upset without a good enough legal ground for doing so and did not actually set aside, it is difficult to see how the tenant could be said to be \"ready and willing\" to pay the rent so as to avoid passing of a decree for eviction against him.On behalf of the landlord appellant, it is submitted that, in an affidavit datedwhich the respondent himself filed in the High Court, it is admitted that the tenant had not been paying the rent regularly as contemplated by the order ofp.m. after depositing \"arrears of rent\" sod counsel for the respondent could only contend that the deposit of future rent on or before the 10th of the next month indicated that the deposit could be made at any time before the rent was due and could cover subsequent accruals of rent so that it could cover several months if amount deposited was enough forcounsel for the appellant points out that the interpretation put forward on behalf of the respondent tenant is not only an unreason?",
+      "source": "expert_annotation"
+     }
+    ],
+    "confidence": "weak",
+    "caution": "Weak match: this case is only loosely similar to your situation. Treat it with caution; it may involve a different fact pattern.",
+    "framing": "Illustrative of how comparable disputes have played out in appellate courts. Not a prediction of your outcome. These are Supreme Court appeal judgments; consumer-forum and rent-court level outcomes are not in this corpus."
+   },
+   {
+    "doc_id": "predex-train-11288",
+    "case_name": "RAM PRATAP Vs. ANAND KANWAR",
+    "issue_area": "tenancy",
+    "similarity": 0.5223,
+    "matched_passage": "The tenant shall also continue to deposit in court or pay to the landlord, month by month, the monthly rent subsequent to the period up to which determination has been made, by the fifteenth of each succeeding month or within such further time, not exceeding fifteen days, as may be extended by the court, at the monthly rate at which the rent was determined by the court Under Sub-section (3).13(5) If a tenant fails to deposit or pay any amount referred to in Sub-section (4), on the date or within the time specified therein, the court shall order the defence against eviction to be struck out and shall proceed with the hearing of the suit.13(6) If a tenant makes deposit or payment as required by Sub-section (4), no decree for eviction on the ground specified in Clause (a) of Sub-section (1) shall be passed by the court against him:Provided that a tenant shall not be entitled to any relief under this subsection, if having obtained such benefit or benefit Under Section 13-A in respect of any such accommodation if he again makes a default in the payment of rent of that accommodation for six months.\"14. It is evident from Section",
+    "summary": [
+     {
+      "text": "The appeal was denied by the Supreme Court.",
+      "source": "dataset_label"
+     },
+     {
+      "text": "The tenant shall also continue to deposit in court or pay to the landlord, month by month, the monthly rent subsequent to the period up to which determination has been made, by the fifteenth of each succeeding month or within such further time, not exceeding fifteen days, as may be extended by the court, at the monthly rate at which the rent was determined by the court Under Sub-section (3).13(5) If a tenant fails to deposit or pay any amount referred to in Sub-section (4), on the date or within the time specified therein, the court shall order the defence against eviction to be struck out and shall proceed with the hearing of the suit.13(6) If a tenant makes deposit or payment as required by Sub-section (4), no decree for eviction on the ground specified in Clause (a) of Sub-section (1) shall be passed by the court against him:Provided that a tenant shall not be entitled to any relief under this subsection, if having obtained such benefit or benefit Under Section 13-A in respect of any such accommodation if he again makes a default in the payment of rent of that accommodation for six months.\"14. It is evident from Section",
+      "source": "judgment_text"
+     },
+     {
+      "text": "8. The material facts are not in dispute.",
+      "source": "expert_annotation"
+     }
+    ],
+    "confidence": "weak",
+    "caution": "Weak match: this case is only loosely similar to your situation. Treat it with caution; it may involve a different fact pattern.",
+    "framing": "Illustrative of how comparable disputes have played out in appellate courts. Not a prediction of your outcome. These are Supreme Court appeal judgments; consumer-forum and rent-court level outcomes are not in this corpus."
+   },
+   {
+    "doc_id": "predex-train-16440",
+    "case_name": "V.N.Vasudeva Vs. Seth Kirorimal Luhariwala",
+    "issue_area": "tenancy",
+    "similarity": 0.5095,
+    "matched_passage": "deposited the money, there would be no further hearing and his plea that there was an agreement between the parties that the rent as and when it fell due should be set off against the professional fees, would remain untried. In our opinion, this reading is not permissible.Section 15 (omitting such parts as are unnecessary for the present purpose) reads as follows:\"Section 15.(1) In every proceeding for the recovery of possession of any premises on the ground specified in clause (a) of the proviso to sub-section (1) of Section 14, the Controller shall, after giving the parties an opportunity of being heard, make an order directing the tenant to pay to the landlord or deposit with the Controller within one month of the date of the order, an amount calculated at the rate of rent at which it was last paid for the period for which the arrears of the rent were legally recoverable from the tenant including the period subsequent thereto up to the end of the month previous to that in which payment or deposit is made and to continue to pay or deposit month by mouth, by the fifteenth of each succeeding month, a sum equivalent to",
+    "summary": [
+     {
+      "text": "The appeal was denied by the Supreme Court.",
+      "source": "dataset_label"
+     },
+     {
+      "text": "deposited the money, there would be no further hearing and his plea that there was an agreement between the parties that the rent as and when it fell due should be set off against the professional fees, would remain untried. In our opinion, this reading is not permissible.Section 15 (omitting such parts as are unnecessary for the present purpose) reads as follows:\"Section 15.(1) In every proceeding for the recovery of possession of any premises on the ground specified in clause (a) of the proviso to sub-section (1) of Section 14, the Controller shall, after giving the parties an opportunity of being heard, make an order directing the tenant to pay to the landlord or deposit with the Controller within one month of the date of the order, an amount calculated at the rate of rent at which it was last paid for the period for which the arrears of the rent were legally recoverable from the tenant including the period subsequent thereto up to the end of the month previous to that in which payment or deposit is made and to continue to pay or deposit month by mouth, by the fifteenth of each succeeding month, a sum equivalent to",
+      "source": "judgment_text"
+     },
+     {
+      "text": "The letter itself does not show that there was any such agreement.In fact it shows the contrary where itbalance of your fees will be paid latter at the time of finalshows that the appellant was not entitled to retain the rent in his hands, and the Tribunals below were justified in saying that the plea about theagreement was anbecause till September 14, 1959, the appellant had not mentioned such an agreement. We are also satisfied that the plea was a mere device to retain the money and to avoid paying the rent.",
+      "source": "expert_annotation"
+     }
+    ],
+    "confidence": "weak",
+    "caution": "Weak match: this case is only loosely similar to your situation. Treat it with caution; it may involve a different fact pattern.",
+    "framing": "Illustrative of how comparable disputes have played out in appellate courts. Not a prediction of your outcome. These are Supreme Court appeal judgments; consumer-forum and rent-court level outcomes are not in this corpus."
+   },
+   {
+    "doc_id": "predex-train-21788",
+    "case_name": "Modula India Vs. Kamakshya Singh Deo",
+    "issue_area": "tenancy",
+    "similarity": 0.5081,
+    "matched_passage": "be dismissed by the court. In default of such payment the court shall proceed with the hearing of the suit: Provided that the tenant shall not be entitled to the benefit of protection against eviction under this section if he makes default in payment of the rent referred to in Clause (i) of the provision to Sub-section 1 of Section 12 on three occasions within a period of eighteen months. (4) If the tenant contests the suit, as regards claim for ejectment, the plaintiff-landlord may make an application at any stage of the suit for order on the tenant-defendant to deposit month by month rent at a rate at which it was last paid and also the arrears of rent, if any, and the court after giving an opportunity to the parties to be heard may make an order for deposit of rent at such rate month by month and the arrears of rent, if any, and on failure of the tenant to deposit the arrears of rent within fifteen days of the date of the order or the rent at such rate for any month by the fifteenth day of the next following month the court shall order the",
+    "summary": [
+     {
+      "text": "The appeal was granted by the Supreme Court.",
+      "source": "dataset_label"
+     },
+     {
+      "text": "be dismissed by the court. In default of such payment the court shall proceed with the hearing of the suit: Provided that the tenant shall not be entitled to the benefit of protection against eviction under this section if he makes default in payment of the rent referred to in Clause (i) of the provision to Sub-section 1 of Section 12 on three occasions within a period of eighteen months.",
+      "source": "judgment_text"
+     },
+     {
+      "text": "14. We have considered the contentions urged on behalf of both the parties and the respective view points of the two lines of decisions of the High Court.",
+      "source": "expert_annotation"
+     }
+    ],
+    "confidence": "weak",
+    "caution": "Weak match: this case is only loosely similar to your situation. Treat it with caution; it may involve a different fact pattern.",
+    "framing": "Illustrative of how comparable disputes have played out in appellate courts. Not a prediction of your outcome. These are Supreme Court appeal judgments; consumer-forum and rent-court level outcomes are not in this corpus."
+   },
+   {
+    "doc_id": "predex-train-15573",
+    "case_name": "Karan Kapoor Vs. Madhuri Kumar",
+    "issue_area": "tenancy",
+    "similarity": 0.5059,
+    "matched_passage": "The Respondent-Landlord entered into a Lease Agreement dated 07.08.2011 with proprietorship concern of the Appellant, namely M/s. Fantasy Lights, at monthly rent of Rs.1,17,000/- for a period of 24 months starting from 07.08.2011 till 07.08.2013 and interest free security deposit of Rs.3,51,000/- (Three Lakhs Fifty – One Thousand Only) was paid by the Appellant at the time of the execution of the Lease Agreement. After the expiry of the Lease Agreement, an extended Lease Agreement for subsequent term of 11 months was executed on 07.08.2013 at the rate of Rent of Rs.1,50,000/- per month which was to expire on 06.07.2014. The Security Deposit paid earlier was retained as Interest Free Security Deposit towards Lease Agreement dated 07.08.2013 as well. 4. The Appellant tenant did not pay any rent after the expiry of the extended Lease Agreement dated 06.07.2014 with effect from 07.07.2014 and continued in occupation of the Suit Property. A Legal Notice dated 12.04.2018 was served by the Respondent landlord upon the Appellant calling him to vacate the Suit Property. However, even thereafter, neither the Suit Property was vacated, nor the rent was paid which led the Respondent/Plaintiff to file Civil Suit No.867 of 2018 for recovery of possession,",
+    "summary": [
+     {
+      "text": "The appeal was granted by the Supreme Court.",
+      "source": "dataset_label"
+     },
+     {
+      "text": "The Respondent-Landlord entered into a Lease Agreement dated 07.08.2011 with proprietorship concern of the Appellant, namely M/s. Fantasy Lights, at monthly rent of Rs.1,17,000/- for a period of 24 months starting from 07.08.2011 till 07.08.2013 and interest free security deposit of Rs.3,51,000/- (Three Lakhs Fifty – One Thousand Only) was paid by the Appellant at the time of the execution of the Lease Agreement.",
+      "source": "judgment_text"
+     },
+     {
+      "text": "16. Thus, legislative intent is clear by using the word may and as it may think fit to the nature of admission.",
+      "source": "expert_annotation"
+     }
+    ],
+    "confidence": "weak",
+    "caution": "Weak match: this case is only loosely similar to your situation. Treat it with caution; it may involve a different fact pattern.",
+    "framing": "Illustrative of how comparable disputes have played out in appellate courts. Not a prediction of your outcome. These are Supreme Court appeal judgments; consumer-forum and rent-court level outcomes are not in this corpus."
+   }
+  ],
+  "message": null,
+  "abstain_reason": null
+ },
+ "rights": {
+  "status": "ok",
+  "issue_type": "tenancy",
+  "sections": [
+   {
+    "act_id": "mta_2021",
+    "act": "The Model Tenancy Act, 2021",
+    "section": "11",
+    "title": "Security deposit",
+    "verbatim_text": "(1) The security deposit to b e paid by the tenant in advance shall be such as may be agreed upon between the landlord and the tenant in the tenancy agreement, which shall –– (a) not exceed two months rent, in case of residential premises; and (b) not exceed six months rent , in case of non -residential premises. (2) The security deposit shall be refunded to the tenant on the date of taking over vacant possession of the premises from the tenant, after making due deduction of any liability of the tenant.",
+    "source": {
+     "publisher": "Ministry of Housing and Urban Affairs (official model law)",
+     "url": "https://mohua.gov.in/upload/uploadfiles/files/Model-Tenancy-Act-English-02_06_2021.pdf (retrieved via web.archive.org)",
+     "downloaded": "2026-07-07",
+     "note": "Mechanically extracted from the official PDF; verify against the source before production use."
+    },
+    "gloss": "Under the model provision quoted above, a security deposit for residential premises cannot exceed two months' rent (six months for non-residential premises), and it must be refunded to the tenant on the date the landlord takes back vacant possession, after deducting any liability of the tenant.",
+    "caveat": "The Model Tenancy Act is a central model law circulated to states; the rent or tenancy act of your own state governs your dispute. A lawyer can tell you which act applies where you live."
+   },
+   {
+    "act_id": "mta_2021",
+    "act": "The Model Tenancy Act, 2021",
+    "section": "21",
+    "title": "Eviction and recovery of possession of premises by landlord",
+    "verbatim_text": "(1) A tenant shall not be evicted during the continuance of tenancy agreement unless otherwise agreed to in writing by the landlord and tenant, except in accordance with the provisions of sub - section (2) or in accordance with the provisions of section 22. (2) The Rent Court may, on an application made to it by the landlord in such manner as may be prescribed, make an order for eviction and recovery of possession of the premises on one or more of the following grounds, namely: - (a) that the tenant does not agree to pay the rent payable under section 8; (b) that the tenant has not paid the arrears of rent and other charges payable in full as specified in sub -section (1) of section 13 for two consecutive months, including interest for delayed payment as may be specified in the tenancy agreement within a period of one month from the date of service of notice of demand for payment of such arrears of rent and other charges payable to the landlord in the manner provided in sub -section (4) of section 106 of the Transfer of Property Act, 1882; (c) that the tenant has, after the commencemen t of this Act, parted with the possession of whole or any part of the premises without obtaining the written consent of the landlord; (d) that the tenant has continued to misuse the premises even after receipt of notice from the landlord to desist from suc h misuse. Explanation.–– For the purposes of this clause, “misuse of premises” means encroachment of additional space by the tenant or use of premises which causes public nuisance or causes damage to the property or is detrimental to the interest of the landlord or for immoral or illegal purposes; (e) where it is necessary for the landlord to carry out any repair or construction or rebuilding or addition or alteration or demolition in respect of the premises or any part thereof, which is not possible to be carried out without the premises being vacated: Provided that after such repair, construction, rebuilding, addition or alteration, the tenant may be allowed to reoccupy the premises only when it has been mutually agreed to between the landlord and the tenant and a new tenancy agreement has been submitted with the Rent Authority: Provided further that the tenant shall not be allowed to reoccupy the premises–– (i) in the absence of submission of such mutual tenancy agreement with the Rent Authority; and (ii) in cases where the tenant has been evicted under the orders of a Rent Court; (f) that the premises or any part thereof is required by the landlord for carrying out any repairs, construction, rebuilding, additions, a lterations or demolition, for change of its use as a consequence of change of land use by the competent authority. Explanation.–– For the purposes of this clause, the expression “competent authority” means the Municipal Corporation or the Municipality or the Development Authority or any other authority, as the case may be, which provides permission on matters relating to repair or r edevelopment or demolition of building or permission for change in land use: (g) that the tenant has given written notice to vacate the premises let out on rent and in consequence of that notice the landlord has contracted to sell the said premises or has taken any other step, as a result of which his interests would seriously suffer if he is not put in possession of that premises; (h) that the tenant has carried out any structural change or erected any permanent structure in the premises let out on rent without the written consent of the landlord. (3) No order for eviction of the tenant on account of failure to pay the rent specified in clause (b) of sub -section (2) shall be made, if the tenant makes payment to the landlord or deposits with the Rent Court the arrears of rent and other charges payable, if any, including interest within one month from the date of service of the said demand notice upon him. (4) Where the tenant fails to pay rent consecutively for two months subsequent to the grant of the relief specified in sub -section (3) in any one year, then the tenant shall not be entitled to such relief again. (5) In any proceedings for eviction under clause (e) of sub -section (2), the Rent Court may allow eviction from only a part of the premises, if the landlord agrees for the same.",
+    "source": {
+     "publisher": "Ministry of Housing and Urban Affairs (official model law)",
+     "url": "https://mohua.gov.in/upload/uploadfiles/files/Model-Tenancy-Act-English-02_06_2021.pdf (retrieved via web.archive.org)",
+     "downloaded": "2026-07-07",
+     "note": "Mechanically extracted from the official PDF; verify against the source before production use."
+    },
+    "gloss": "Under the model provision quoted above, a tenant cannot be evicted while the tenancy agreement runs except by written agreement or on the grounds the provision lists, on the landlord's application to the Rent Court: refusal to pay the agreed rent, arrears of two consecutive months not cleared within one month of a demand notice, parting with possession without the landlord's written consent, continued misuse of the premises after notice, or specified repair, rebuilding or land-use situations. It also says no eviction order for arrears shall be made if the tenant pays or deposits the arrears with interest within one month of the demand notice, a relief the tenant cannot claim again after failing to pay for two consecutive months in the same year.",
+    "caveat": "The Model Tenancy Act is a central model law circulated to states; the rent or tenancy act of your own state governs your dispute. A lawyer can tell you which act applies where you live."
+   }
+  ],
+  "message": null,
+  "disclaimer": "This is legal information, not legal advice. It does not predict any outcome and is not a substitute for a lawyer. Please consult a qualified advocate."
+ },
+ "pathways": {
+  "status": "ok",
+  "issue_type": "tenancy",
+  "pathways": [
+   {
+    "pathway_id": "written_notice",
+    "name": "Written demand or notice to the other side",
+    "what_it_is": "A dated, written statement of what you demand (deposit refund, repairs, vacating, arrears) sent with proof of delivery.",
+    "when_it_makes_sense": "First, in nearly every tenancy dispute; most later forums expect to see it.",
+    "pros": [
+     "Cheap, quick, and creates the record",
+     "Often enough to unlock a deposit or start a negotiation"
+    ],
+    "cons": [
+     "No compulsion by itself"
+    ],
+    "section_refs": []
+   },
+   {
+    "pathway_id": "rent_authority",
+    "name": "Rent Authority or Rent Court under your state's law",
+    "what_it_is": "The specialised forum for tenancy disputes where your state has one. The cited model-law provisions show how such forums handle deposits and eviction, but your state's own rent law governs; the caveat on the cited sections applies fully.",
+    "when_it_makes_sense": "When notice failed and the dispute is squarely about deposit, rent, or eviction.",
+    "pros": [
+     "A forum built for exactly these disputes where it exists",
+     "The cited model provisions show the shape of the protections"
+    ],
+    "cons": [
+     "Whether a Rent Authority or Rent Court exists, and its procedure, varies by state; confirm locally"
+    ],
+    "section_refs": [
+     {
+      "act_id": "mta_2021",
+      "section": "11",
+      "act": "The Model Tenancy Act, 2021",
+      "title": "Security deposit"
+     },
+     {
+      "act_id": "mta_2021",
+      "section": "21",
+      "act": "The Model Tenancy Act, 2021",
+      "title": "Eviction and recovery of possession of premises by landlord"
+     }
+    ]
+   },
+   {
+    "pathway_id": "civil_suit",
+    "name": "Civil suit",
+    "what_it_is": "An ordinary civil case, for example to recover a deposit as a money claim or to protect possession.",
+    "when_it_makes_sense": "When no specialised forum applies, or a lawyer advises it for the specific claim.",
+    "pros": [
+     "Available everywhere",
+     "Full civil remedies"
+    ],
+    "cons": [
+     "Slower and costlier than a specialised forum",
+     "Court fees and timelines vary; confirm with a lawyer"
+    ],
+    "section_refs": []
+   },
+   {
+    "pathway_id": "police_complaint",
+    "name": "Police complaint, for genuine criminality only",
+    "what_it_is": "A complaint to the police where there is actual criminal conduct, such as forcible lockout, threats, or violence. Police treat ordinary rent and deposit disputes as civil matters and generally will not intervene in them.",
+    "when_it_makes_sense": "When safety is at risk or you are being forcibly dispossessed, alongside, not instead of, the civil routes.",
+    "pros": [
+     "The right route where there are threats or force"
+    ],
+    "cons": [
+     "Not a recovery mechanism for money or possession",
+     "Expect to be told it is a civil matter unless real criminality is shown"
+    ],
+    "section_refs": []
+   },
+   {
+    "pathway_id": "mediation_lok_adalat",
+    "name": "Settlement, mediation, or Lok Adalat",
+    "what_it_is": "A negotiated resolution, including through court-annexed mediation or a Lok Adalat.",
+    "when_it_makes_sense": "When the relationship or speed matters more than winning every point.",
+    "pros": [
+     "Fast, cheap, consensual"
+    ],
+    "cons": [
+     "Needs both sides willing"
+    ],
+    "section_refs": []
+   }
+  ],
+  "limitation_flags": [
+   {
+    "statement": "No general limitation period applies from the bundled statute set; time limits for tenancy claims depend on your state's rent law and the kind of claim.",
+    "section_ref": null,
+    "caveat": "When a limitation period starts, whether it has expired, and whether a delay can be condoned are fact-dependent questions that this tool does not and will not compute. Treat every period here as a reason to act early, and confirm limitation with a lawyer as soon as possible."
+   }
+  ],
+  "caveats": [
+   "The Model Tenancy Act is a central model law circulated to states; the rent or tenancy act of your own state governs your dispute. A lawyer can tell you which act applies where you live."
+  ],
+  "message": null,
+  "disclaimer": "This is legal information, not legal advice. It does not predict any outcome and is not a substitute for a lawyer. Please consult a qualified advocate."
+ },
+ "prep_pack": {
+  "status": "ok",
+  "issue_type": "tenancy",
+  "documents_checklist": [
+   "The rent or tenancy agreement; if there is none in writing, whatever shows the arrangement (messages, receipts)",
+   "Rent payment records: transfers, receipts, or a rent ledger",
+   "Proof of the security deposit payment",
+   "Move-in and move-out photos or inspection notes, if any",
+   "All correspondence with the other side",
+   "Utility bills or society records connecting you to the premises",
+   "The written notice or demand you sent, with proof of delivery",
+   "Names and contacts of any witnesses (neighbours, broker)"
+  ],
+  "lawyer_questions": [
+   "Which law applies in my state, and which forum should hear my dispute?",
+   "Is my documentation enough to prove the tenancy and the deposit, and what would strengthen it?",
+   "What would the forum route realistically cost and take, compared with negotiating?",
+   "If I fear being locked out or dispossessed, what interim protection can we seek immediately?",
+   "Until this resolves, what should I keep doing or stop doing about rent payments and communication?"
+  ],
+  "timeline": [
+   {
+    "order": 1,
+    "event_cue": "vacate",
+    "description": "I vacated my rented flat two months ago after giving proper notice.",
+    "date_index": 0,
+    "amount_indices": [],
+    "date_basis": "narrative",
+    "span": [
+     0,
+     67
+    ]
+   },
+   {
+    "order": 2,
+    "event_cue": "return",
+    "description": "The landlord has not returned my security deposit of Rs 50,000 and now claims painting charges that were never mentioned in the agreement.",
+    "date_index": null,
+    "amount_indices": [
+     0
+    ],
+    "date_basis": "narrative",
+    "span": [
+     68,
+     206
+    ]
+   }
+  ],
+  "timeline_note": null,
+  "rights_refs": [
+   {
+    "act_id": "mta_2021",
+    "section": "11",
+    "act": "The Model Tenancy Act, 2021",
+    "title": "Security deposit"
+   },
+   {
+    "act_id": "mta_2021",
+    "section": "21",
+    "act": "The Model Tenancy Act, 2021",
+    "title": "Eviction and recovery of possession of premises by landlord"
+   }
+  ],
+  "pathway_refs": [
+   {
+    "pathway_id": "written_notice",
+    "name": "Written demand or notice to the other side"
+   },
+   {
+    "pathway_id": "rent_authority",
+    "name": "Rent Authority or Rent Court under your state's law"
+   },
+   {
+    "pathway_id": "civil_suit",
+    "name": "Civil suit"
+   },
+   {
+    "pathway_id": "police_complaint",
+    "name": "Police complaint, for genuine criminality only"
+   },
+   {
+    "pathway_id": "mediation_lok_adalat",
+    "name": "Settlement, mediation, or Lok Adalat"
+   }
+  ],
+  "limitation_flags": [
+   {
+    "statement": "No general limitation period applies from the bundled statute set; time limits for tenancy claims depend on your state's rent law and the kind of claim.",
+    "section_ref": null,
+    "caveat": "When a limitation period starts, whether it has expired, and whether a delay can be condoned are fact-dependent questions that this tool does not and will not compute. Treat every period here as a reason to act early, and confirm limitation with a lawyer as soon as possible."
+   }
+  ],
+  "caveats": [
+   "The Model Tenancy Act is a central model law circulated to states; the rent or tenancy act of your own state governs your dispute. A lawyer can tell you which act applies where you live."
+  ],
+  "message": null,
+  "disclaimer": "This is legal information, not legal advice. It does not predict any outcome and is not a substitute for a lawyer. Please consult a qualified advocate."
+ },
+ "draft": null
+}

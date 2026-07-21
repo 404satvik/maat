@@ -33,7 +33,13 @@ export default function DraftView({ scenario }) {
     )
   }
 
-  const segments = parseDraftBody(draft.body_text)
+  // The full warning is shown once in the brick callout below; inside the
+  // template body it is collapsed to a short pointer so it is not printed
+  // verbatim twice. Display-only: draft.body_text is not modified.
+  const shortWarning =
+    "DRAFT ONLY: see the full warning above; not to be sent without a lawyer's review."
+  const bodyForDisplay = draft.body_text.replace(draft.draft_warning, shortWarning)
+  const segments = parseDraftBody(bodyForDisplay)
 
   return (
     <div className="max-w-3xl">

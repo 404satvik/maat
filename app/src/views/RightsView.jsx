@@ -19,6 +19,10 @@ export default function RightsView({ scenario }) {
   }
 
   const caveats = scenario.pathways?.caveats ?? scenario.prep_pack?.caveats ?? []
+  // Caveats already shown once at the page level are not repeated inside each
+  // section card; a section caveat distinct from the pack-level ones still
+  // renders on its card.
+  const pageCaveats = new Set(caveats)
 
   return (
     <div className="max-w-3xl">
@@ -38,14 +42,18 @@ export default function RightsView({ scenario }) {
 
       <div className="mt-6 space-y-5">
         {rights.sections.map((section) => (
-          <RightsSection key={`${section.act_id}-${section.section}`} section={section} />
+          <RightsSection
+            key={`${section.act_id}-${section.section}`}
+            section={section}
+            suppressCaveat={section.caveat ? pageCaveats.has(section.caveat) : false}
+          />
         ))}
       </div>
     </div>
   )
 }
 
-function RightsSection({ section }) {
+function RightsSection({ section, suppressCaveat }) {
   const [open, setOpen] = useState(false)
   return (
     <SectionCard className="p-5">
@@ -70,13 +78,13 @@ function RightsSection({ section }) {
             {section.verbatim_text}
             <footer className="mt-3 font-mono text-xs not-italic text-ink-muted">
               Source: {section.source?.publisher}
-              {section.source?.url ? ` — ${section.source.url}` : ''}
+              {section.source?.url ? `, ${section.source.url}` : ''}
             </footer>
           </blockquote>
         ) : null}
       </div>
 
-      {section.caveat ? (
+      {section.caveat && !suppressCaveat ? (
         <Callout tone="caution" label="Section caveat" className="mt-4">
           {section.caveat}
         </Callout>

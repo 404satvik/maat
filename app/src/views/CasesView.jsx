@@ -6,6 +6,12 @@ const SOURCE_LABELS = {
   expert_annotation: 'Expert annotation',
 }
 
+// Verbatim excerpts can begin mid-sentence. Prepend a leading ellipsis for
+// display so it reads as an intentional excerpt; the stored text is unchanged.
+function displayExcerpt(text) {
+  return /^\s*[a-z]/.test(text) ? `... ${text.trimStart()}` : text
+}
+
 // Step 3: retrieval. Confident, weak, and abstain must read differently.
 // Abstain shows its routing message, never an empty list.
 export default function CasesView({ scenario }) {
@@ -73,7 +79,9 @@ export default function CasesView({ scenario }) {
                         <dt className="font-mono text-xs uppercase tracking-[0.12em] text-ink-muted">
                           {SOURCE_LABELS[part.source] ?? part.source}
                         </dt>
-                        <dd className="mt-1 text-sm leading-relaxed text-ink">{part.text}</dd>
+                        <dd className="mt-1 text-sm leading-relaxed text-ink">
+                          {displayExcerpt(part.text)}
+                        </dd>
                       </div>
                     ))}
                   </dl>
